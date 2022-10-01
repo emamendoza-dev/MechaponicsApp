@@ -4,7 +4,12 @@
     <color name="third_color">#76d275</color>
     <color name="second_color">#43a047</color>
     <color name="first_color">#00701a</color>
+    <color name="primary_color_app">#c79100</color>
+    <color name="second_color_app">#ffc107</color>
+    <color name="third_color_app">#fff350</color>
     // Colores de apoyo
+    // Color de Splash Screen
+    <color name="SC_color">#c79100</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
