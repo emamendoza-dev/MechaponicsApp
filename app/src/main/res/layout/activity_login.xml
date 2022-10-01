@@ -124,7 +124,6 @@
             android:drawableEnd="@drawable/lg_ic_login"
             android:drawableTint="#fff"
             android:fontFamily="@font/poppins_medium"
-            android:onClick="iniciarSesion"
             android:text="@string/lg_btn_IniciarSesion" />
     </LinearLayout>
 
