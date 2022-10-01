@@ -26,6 +26,8 @@
 
     <!-- Textos de la aplicación en el splash screen -->
 
+    <!-- Realizado por -->
+
     <TextView
         android:id="@+id/tvSCBy"
         android:layout_width="wrap_content"
@@ -39,6 +41,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivSCLogo"
         tools:ignore="TextContrastCheck" />
+
+    <!-- Nombre de la empresa -->
 
     <TextView
         android:id="@+id/tvSCName"
