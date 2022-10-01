@@ -39,11 +39,14 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+                // Se determina si hay una cuenta activa
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 Intent intent;
                 if (user != null){
+                    // Va directo a la ventana de trabajo de la app
                     intent = new Intent(MainActivity.this, InitActivity.class);
                 }else{
+                    // Si no hay usuario activo se va a la ventana de login
                     intent = new Intent(MainActivity.this, LoginActivity.class);
                 }
                 startActivity(intent);

@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
         correo = findViewById(R.id.edtEmail);
         contrasena = findViewById(R.id.edtContrasena);
         btnIniciarSes = findViewById(R.id.btnInciarS);
-
+        // Función de boton presionado
         btnIniciarSes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
