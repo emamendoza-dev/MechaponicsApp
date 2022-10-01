@@ -119,7 +119,6 @@
             android:drawableEnd="@drawable/su_ic_registro"
             android:drawableTint="#fff"
             android:fontFamily="@font/poppins_medium"
-            android:onClick="registrarUsuario"
             android:text="@string/su_btn_registroU" />
     </LinearLayout>
 </RelativeLayout>

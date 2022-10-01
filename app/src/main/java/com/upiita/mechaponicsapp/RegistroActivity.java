@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -15,6 +17,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.regex.Pattern;
+
 public class RegistroActivity extends AppCompatActivity {
 
     //Variables para autenticacion
@@ -22,6 +26,7 @@ public class RegistroActivity extends AppCompatActivity {
     private EditText correo;
     private EditText contrasena;
     private EditText confContrasena;
+    Button btnRegistrar;
 
     // Función onCreate
     @Override
@@ -35,6 +40,14 @@ public class RegistroActivity extends AppCompatActivity {
         correo = findViewById(R.id.edtUsuarioR);
         contrasena = findViewById(R.id.edtContrasenaR);
         confContrasena = findViewById(R.id.edtContrasenaCR);
+        btnRegistrar = findViewById(R.id.btnRegistarU);
+        // Función del boton de registro
+        btnRegistrar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                validate();
+            }
+        });
     }
 
     // Función onStart
@@ -48,34 +61,57 @@ public class RegistroActivity extends AppCompatActivity {
         }*/
     }
 
-    // Funcion para registrar un usuario
-    public void registrarUsuario(View view){
-        // Verificacion de campos de contraseña llenados correctamente
-        if(contrasena.getText().toString().equals(confContrasena.getText().toString())){
-            mAuth.createUserWithEmailAndPassword(correo.getText().toString(), contrasena.getText().toString())
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        // Funcion para autenticar las credenciales
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                // Usuario registrado correctamente
-                                // Notificacion al usuario de proceso exitoso
-                                Toast.makeText(getApplicationContext(), "Usuario creado exitosamente.", Toast.LENGTH_SHORT).show();
-                                // Informacion de usuario
-                                FirebaseUser user = mAuth.getCurrentUser();
-                                // Cambio de ventana
-                                Intent i = new Intent(getApplicationContext(), LoginActivity.class);
-                                startActivity(i);
-                            } else {
-                                // Registro fallido
-                                // Notificación al usuario de proceso fallido
-                                Toast.makeText(getApplicationContext(), "Registro fallido, reintente.", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
+    // Función para validar datos
+    public void validate(){
+        String email = correo.getText().toString().trim();
+        String pass = contrasena.getText().toString().trim();
+        String passconf = confContrasena.getText().toString().trim();
+
+        if (email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            correo.setError("Correo invalido");
+            return;
         }else{
-            // Notificación al usuario de contraseñas no son iguales
-            Toast.makeText(this, "Las contraseñas no corresponden, verifique", Toast.LENGTH_SHORT).show();
+            correo.setError(null);
         }
+        if (pass.isEmpty() || pass.length() < 8){
+            contrasena.setError("Se necesitan más de 8 caracteres");
+            return;
+        }else if(!Pattern.compile("[0-9]").matcher(pass).find()){
+            contrasena.setError("La contraseña debe tener al menos un número");
+            return;
+        }else{
+            contrasena.setError(null);
+        }
+        if (!passconf.equals(pass)){
+            confContrasena.setError("Las contraseñas no coinciden");
+        }else{
+            registrarUsuario(email, pass);
+        }
+    }
+
+    // Funcion para registrar un usuario
+    public void registrarUsuario(String email, String password){
+        // Verificacion de campos de contraseña llenados correctamente
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    // Funcion para autenticar las credenciales
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Usuario registrado correctamente
+                            // Notificacion al usuario de proceso exitoso
+                            Toast.makeText(getApplicationContext(), "Usuario creado exitosamente.", Toast.LENGTH_SHORT).show();
+                            // Informacion de usuario
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            // Cambio de ventana
+                            Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+                            startActivity(i);
+                        } else {
+                            // Registro fallido
+                            // Notificación al usuario de proceso fallido
+                            Toast.makeText(getApplicationContext(), "Registro fallido, reintente.", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 }
