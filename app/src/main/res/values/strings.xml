@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">MechaponicsApp</string>
+    // Nombre de la aplicación
+    <string name="app_name">Mechaponics</string>
 </resources>
