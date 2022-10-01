@@ -23,4 +23,16 @@
     <string name="lg_texto_registro">¿No tienes cuenta?, registrate!</string>
     // Texto boton de registrarse
     <string name="lg_btn_registro">Registrarse</string>
+
+    // Sign up screen
+    // Texto para registro
+    <string name="su_text_informacionR">Ingrese un correo y una contraseña para relizar su registro</string>
+    // Texto de usuario
+    <string name="su_text_UsuarioR">Correo Electrónico</string>
+    // Texto de contraseña
+    <string name="su_text_ContrasenaR">Contraseña</string>
+    // Texto de confirmación de contraseña
+    <string name="su_text_ContrasenaCR">Confirme contraseña</string>
+    // Texto boton de registro
+    <string name="su_btn_registroU">Registrar</string>
 </resources>
