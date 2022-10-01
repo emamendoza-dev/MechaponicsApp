@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "61982935762",
+    "project_id": "mechaponicssystem",
+    "storage_bucket": "mechaponicssystem.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:61982935762:android:a91ad50e5be084a860fb0b",
+        "android_client_info": {
+          "package_name": "com.upiita.mechaponicsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "61982935762-5ta6s9vqf9uunc5iu9lqeddvd1u13b65.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmdR3HiZtJIPoMD85eb6jySgPf5IwOoXI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "61982935762-5ta6s9vqf9uunc5iu9lqeddvd1u13b65.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

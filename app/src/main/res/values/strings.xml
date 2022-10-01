@@ -1,6 +1,7 @@
 <resources>
     // Nombre de la aplicación
     <string name="app_name">Mechaponics</string>
+
     // Splash screen
     // Descripcion de la imagen de Splash screen
     <string name="sc_description">Esta imagen es del splash screen de la aplicación</string>
@@ -8,4 +9,18 @@
     <string name="tv_byMechaponics">Hecho por</string>
     // Nombre de la empresa
     <string name="tv_Mechaponics">Mechaponics System</string>
+
+    // Login screen
+    // Texto de bienvenida al usuario
+    <string name="lg_text_bienvenida">¡Bienvenidos a Mechaponics!</string>
+    // Texto de usuario
+    <string name="lg_text_Usuario">Correo Electrónico</string>
+    // Texto de contraseña
+    <string name="lg_text_Contrasena">Contraseña</string>
+    // Texto boton de iniciar sesión
+    <string name="lg_btn_IniciarSesion">Inciar Sesión</string>
+    // Texto para registro
+    <string name="lg_texto_registro">¿No tienes cuenta?, registrate!</string>
+    // Texto boton de registrarse
+    <string name="lg_btn_registro">Registrarse</string>
 </resources>
