@@ -12,7 +12,7 @@
 
     // Login screen
     // Texto de bienvenida al usuario
-    <string name="lg_text_bienvenida">¡Bienvenidos a Mechaponics!</string>
+    <string name="lg_text_bienvenida">¡Bienvenidos a Mechaponics System!</string>
     // Texto de usuario
     <string name="lg_text_Usuario">Correo Electrónico</string>
     // Texto de contraseña

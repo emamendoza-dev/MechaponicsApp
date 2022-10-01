@@ -67,6 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/su_text_ContrasenaR"
+            app:passwordToggleEnabled="true"
             app:startIconDrawable="@drawable/lg_ic_contrasena">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -86,6 +87,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/su_text_ContrasenaCR"
+            app:passwordToggleEnabled="true"
             app:startIconDrawable="@drawable/lg_ic_contrasena">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -117,7 +119,6 @@
             android:drawableEnd="@drawable/su_ic_registro"
             android:drawableTint="#fff"
             android:fontFamily="@font/poppins_medium"
-            android:onClick="registrarUsuario"
             android:text="@string/su_btn_registroU" />
     </LinearLayout>
 </RelativeLayout>

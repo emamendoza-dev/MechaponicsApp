@@ -91,6 +91,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/lg_text_Contrasena"
+            app:passwordToggleEnabled="true"
             app:startIconDrawable="@drawable/lg_ic_contrasena">
 
             <com.google.android.material.textfield.TextInputEditText
