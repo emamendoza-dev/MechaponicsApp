@@ -1,18 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginRight="10dp"
     tools:context=".RegistroActivity">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+    <!-- Texto para registro -->
+
+    <LinearLayout
+        android:id="@+id/linearSuperior"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="324dp"
-        android:text="RegistroActivity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvInformacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/san_francisco"
+            android:gravity="center|center_horizontal"
+            android:text="@string/su_text_informacionR"
+            android:textColor="@color/second_color"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+    <!-- Campo de usuario o correo -->
+
+    <LinearLayout
+        android:id="@+id/linearCentral"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearSuperior"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilUsuarioR"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/su_text_UsuarioR"
+            app:startIconDrawable="@drawable/lg_ic_email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtUsuarioR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:inputType="textEmailAddress"
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Campo de contraseña -->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilContrasenaR"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/su_text_ContrasenaR"
+            app:startIconDrawable="@drawable/lg_ic_contrasena">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtContrasenaR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:inputType="textPassword"
+                android:textSize="15sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Campo de confirmación contraseña -->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilContrasenaCR"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/su_text_ContrasenaCR"
+            app:startIconDrawable="@drawable/lg_ic_contrasena">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtContrasenaCR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:inputType="textPassword"
+                android:textSize="15sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <!-- Botón de registro -->
+
+    <LinearLayout
+        android:id="@+id/linearInferior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearCentral"
+        android:layout_marginTop="10dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnRegistarU"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/su_ic_registro"
+            android:drawableTint="#fff"
+            android:fontFamily="@font/poppins_medium"
+            android:onClick="registrarUsuario"
+            android:text="@string/su_btn_registroU" />
+    </LinearLayout>
+</RelativeLayout>
