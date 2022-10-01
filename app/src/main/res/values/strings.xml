@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">MechaponicsApp</string>
+    // Nombre de la aplicación
+    <string name="app_name">Mechaponics</string>
+    // Splash screen
+    // Descripcion de la imagen de Splash screen
+    <string name="sc_description">Esta imagen es del splash screen de la aplicación</string>
+    // Hecho por
+    <string name="tv_byMechaponics">Hecho por</string>
+    // Nombre de la empresa
+    <string name="tv_Mechaponics">Mechaponics System</string>
 </resources>
