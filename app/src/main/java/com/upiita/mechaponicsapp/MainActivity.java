@@ -11,6 +11,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -36,7 +39,13 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                Intent intent;
+                if (user != null){
+                    intent = new Intent(MainActivity.this, InitActivity.class);
+                }else{
+                    intent = new Intent(MainActivity.this, LoginActivity.class);
+                }
                 startActivity(intent);
                 finish();
             }
