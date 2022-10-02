@@ -18,4 +18,6 @@
     <color name="primary_color_bn">#76d275</color>
     <color name="second_color_bn">#43a047</color>
     <color name="third_color_bn">#00701a</color>
+    // Color Recycler view texto
+    <color name="rv_color_texto">#c79100</color>
 </resources>

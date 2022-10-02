@@ -57,5 +57,28 @@
     <string name="bn_fourthFragment">Ayuda</string>
 
     // First fragment screen
-    // Nombre provisional
+    // CardView
+    // Nombre del nodo
+    <string name="cv_label_nodo">Nodo X</string>
+    // Variable 1
+    <string name="cv_label_var1">Variable 1</string>
+    // Variable 2
+    <string name="cv_label_var2">Variable 2</string>
+    // Variable 3
+    <string name="cv_label_var3">Variable 3</string>
+    // Variable 4
+    <string name="cv_label_var4">Variable 4</string>
+    // Variable 5
+    <string name="cv_label_var5">Variable 5</string>
+    // Variable 6
+    <string name="cv_label_var6">Variable 6</string>
+    // Variable 7
+    <string name="cv_label_var7">Variable 7</string>
+    // Variable 8
+    <string name="cv_label_var8">Variable 8</string>
+    // Estado
+    <string name="cv_label_estado">Estado</string>
+    // Recycler view
+    // Nombre de la descripción de las Cardviews
+    <string name="rv_texto_descripcion">Selecciona un sistema para más detalles</string>
 </resources>
