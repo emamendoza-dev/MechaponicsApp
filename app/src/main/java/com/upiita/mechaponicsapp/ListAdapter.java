@@ -4,10 +4,12 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -75,6 +77,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> im
         holder.variable7.setText(var1);
         holder.variable8.setText(var1);
         holder.estado.setText(estado);
+        holder.cv.setAnimation(AnimationUtils.loadAnimation(mInflater.getContext(), R.anim.fade_transition));
         holder.bindData(mData.get(position));
     }
 
@@ -94,6 +97,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> im
         TextView nodo, variable1, variable2, variable3,
                 variable4, variable5, variable6, variable7, variable8, estado;
 
+        CardView cv;
+
         // Vinculación de las variables del CardView
         public ViewHolder(@NonNull View itemView){
             super(itemView);
@@ -107,6 +112,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> im
             variable7 = itemView.findViewById(R.id.tvVariable7);
             variable8 = itemView.findViewById(R.id.tvVariable8);
             estado = itemView.findViewById(R.id.tvEstadoSis);
+            cv = itemView.findViewById(R.id.cv);
         }
 
         // Función para actualizar los valores del CardView
