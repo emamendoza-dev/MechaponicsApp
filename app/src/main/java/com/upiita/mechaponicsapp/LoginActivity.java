@@ -74,15 +74,18 @@ public class LoginActivity extends AppCompatActivity {
         String pass = contrasena.getText().toString().trim();
 
         if (email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            // Error de campo de correo vacío o dirección invalida
             correo.setError("Correo invalido");
             return;
         }else{
             correo.setError(null);
         }
         if (pass.isEmpty() || pass.length() < 8){
+            // Error de contraseña incorrecta
             contrasena.setError("Contraseña incorrecta");
             return;
         }else{
+            // Inciar sesión en la aplicación
             iniciarSesion(email, pass);
         }
     }

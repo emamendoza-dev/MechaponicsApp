@@ -6,12 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".InitActivity">
 
+    <!-- Frame del bottom navigation bar -->
+
     <FrameLayout
         android:id="@+id/fContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <!-- Bottom navigation bar -->
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"

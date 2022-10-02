@@ -3,6 +3,7 @@ package com.upiita.mechaponicsapp;
 import java.io.Serializable;
 
 public class ListElement implements Serializable {
+    // Elementos a extraer de la base de datos en Firebase
     public String nodo;
     public String variable1;
     public String variable2;
@@ -14,6 +15,7 @@ public class ListElement implements Serializable {
     public String variable8;
     public String estado;
 
+    // Constructor de los elementos a extraer de la base de datos
     public ListElement(String nodo, String variable1,
                        String variable2, String variable3, String variable4,
                        String variable5, String variable6, String variable7,
@@ -30,6 +32,7 @@ public class ListElement implements Serializable {
         this.estado = estado;
     }
 
+    // Gets y Sets de los elementos a extraer de la base de datos
     public String getNodo() {
         return nodo;
     }

@@ -76,21 +76,25 @@ public class RegistroActivity extends AppCompatActivity {
         String passconf = confContrasena.getText().toString().trim();
 
         if (email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            // Error mostrado ante un campo vacio o correo invalido
             correo.setError("Correo invalido");
             return;
         }else{
             correo.setError(null);
         }
         if (pass.isEmpty() || pass.length() < 8){
+            // Error de contraseña menor a 8 caracteres
             contrasena.setError("Se necesitan más de 8 caracteres");
             return;
         }else if(!Pattern.compile("[0-9]").matcher(pass).find()){
+            // Error de contraseña vulnerable
             contrasena.setError("La contraseña debe tener al menos un número");
             return;
         }else{
             contrasena.setError(null);
         }
         if (!passconf.equals(pass)){
+            // Error de contraseñas no coinciden
             confContrasena.setError("Las contraseñas no coinciden");
         }else{
             registrarUsuario(email, pass);

@@ -29,7 +29,7 @@ public class ForgotPassword extends AppCompatActivity {
         // Recuperacion de valores de la ventana
         btnRecuperar = findViewById(R.id.btnRecuperar);
         etCorreo = findViewById(R.id.edtUsuarioCR);
-
+        // Función de botón presionado
         btnRecuperar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,16 +38,19 @@ public class ForgotPassword extends AppCompatActivity {
         });
     }
 
+    // Función para validar datos
     public void validate(){
         String email = etCorreo.getText().toString().trim();
 
         if (email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            // Error de correo invalido
             etCorreo.setError("Correo invalido");
             return;
         }
         sendEmail(email);
     }
 
+    // Función para regresar a login con los botones de retroceso del teléfono
     @Override
     public void onBackPressed(){
         super.onBackPressed();
@@ -56,6 +59,7 @@ public class ForgotPassword extends AppCompatActivity {
         finish();
     }
 
+    // Función para enviar un correo de recuperación al usuario con la dirección ingresada
     public void sendEmail(String email){
         FirebaseAuth auth = FirebaseAuth.getInstance();
         String emailAddress = email;
@@ -65,12 +69,14 @@ public class ForgotPassword extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
+                            // Notificación al usuario de correo enviado
                             Toast.makeText(getApplicationContext(), "Correo enviado.",
                                     Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(ForgotPassword.this, LoginActivity.class);
                             startActivity(intent);
                             finish();
                         }else{
+                            // Notificación de error al enviar correo
                             Toast.makeText(getApplicationContext(), "Correo invalido.",
                                     Toast.LENGTH_SHORT).show();
                         }
