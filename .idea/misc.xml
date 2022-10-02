@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Mendo/AndroidStudioProjects/MechaponicsApp/app/src/main/res/drawable-hdpi/cv_ic_crop.xml" value="0.151" />
+        <entry key="..\:/Users/Mendo/AndroidStudioProjects/MechaponicsApp/app/src/main/res/drawable-hdpi/cv_ic_sn.xml" value="0.151" />
         <entry key="..\:/Users/Mendo/AndroidStudioProjects/MechaponicsApp/app/src/main/res/drawable-hdpi/f1_ic_help.xml" value="0.151" />
         <entry key="..\:/Users/Mendo/AndroidStudioProjects/MechaponicsApp/app/src/main/res/drawable-hdpi/f1_ic_home.xml" value="0.151" />
         <entry key="..\:/Users/Mendo/AndroidStudioProjects/MechaponicsApp/app/src/main/res/drawable-hdpi/f1_ic_settings.xml" value="0.151" />

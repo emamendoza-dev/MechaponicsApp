@@ -54,6 +54,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> im
     // Función para obtener y poner datos en el CardView
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position){
+        int ima = mData.get(position).getImacv();
         // Obtención de los valores del CardView
         String nodo = mData.get(position).getNodo();
         String var1 = mData.get(position).getVariable1();
@@ -66,6 +67,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> im
         String var8 = mData.get(position).getVariable8();
         String estado = mData.get(position).getEstado();
 
+        holder.iconImage.setImageResource(ima);
         // Colocación de los datos del CardView
         holder.nodo.setText(nodo);
         holder.variable1.setText(var1);
@@ -93,6 +95,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> im
     // Función del Recycler View
     public class ViewHolder extends RecyclerView.ViewHolder {
 
+        ImageView iconImage;
         // Variables de la CardView
         TextView nodo, variable1, variable2, variable3,
                 variable4, variable5, variable6, variable7, variable8, estado;
@@ -102,6 +105,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> im
         // Vinculación de las variables del CardView
         public ViewHolder(@NonNull View itemView){
             super(itemView);
+            iconImage = itemView.findViewById(R.id.cv_iconImageView);
             nodo = itemView.findViewById(R.id.tvNodo);
             variable1 = itemView.findViewById(R.id.tvVariable1);
             variable2 = itemView.findViewById(R.id.tvVariable2);
@@ -117,6 +121,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> im
 
         // Función para actualizar los valores del CardView
         void bindData(final ListElement item){
+            iconImage.setImageResource(item.getImacv());
             nodo.setText(item.getNodo());
             variable1.setText(item.getVariable1());
             variable2.setText(item.getVariable2());

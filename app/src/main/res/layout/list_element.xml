@@ -28,7 +28,7 @@
             <!-- Imagen del CardView -->
 
             <ImageView
-                android:id="@+id/iconImageView"
+                android:id="@+id/cv_iconImageView"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_alignParentStart="true"
@@ -37,7 +37,7 @@
                 android:layout_gravity="center"
                 android:paddingLeft="14dp"
                 android:paddingRight="14dp"
-                app:srcCompat="@drawable/lg_ic_login" />
+                app:srcCompat="@drawable/cv_ic_sn" />
 
             <LinearLayout
                 android:id="@+id/linearL2"
@@ -47,8 +47,8 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginLeft="4dp"
                 android:layout_marginTop="2dp"
-                android:layout_toEndOf="@+id/iconImageView"
-                android:layout_toRightOf="@+id/iconImageView"
+                android:layout_toEndOf="@+id/cv_iconImageView"
+                android:layout_toRightOf="@+id/cv_iconImageView"
                 android:orientation="vertical">
 
                 <!-- Nombre del CardView -->

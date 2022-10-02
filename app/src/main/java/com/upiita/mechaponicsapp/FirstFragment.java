@@ -34,7 +34,7 @@ public class FirstFragment extends Fragment {
     // Valores a extraer de la base de datos
     String valor1, valor2, valor3, valor4, valor5, valor6, valor7, valor8;
     // Nodos vinculados en la app
-    int nodos = 1;
+    int nodos = 2;
     // Objeto de Firebase para obtener la referencia de obtención de datos de la base de datos
     FirebaseDatabase database = FirebaseDatabase.getInstance();
 
@@ -71,22 +71,40 @@ public class FirstFragment extends Fragment {
                     valor8 = snapshot.child("Variable8").getValue().toString();
                     // Elminación de CardViews del mismo nodo o creación del CardView si no existe
                     if(elements.size() == 2){
-                        // Mismo CardView del nodo
-                        // Eliminación del CardView desactualizado
-                        elements.remove(0);
                         // Creación del CardView del nodo
-                        elements.add(0, new ListElement( pathNodo, "Variable 1: "+valor1,
-                                "Variable 2: "+valor2,"Variable 3: "+valor3,
-                                "Variable 4: "+valor4,"Variable 5: "+valor5,
-                                "Variable 6: "+valor6,"Variable 7: "+valor7,
-                                "Variable 8: "+valor8,"Estado OK"));
+                        if (valnodo == 1){
+                            // Mismo CardView del nodo
+                            // Eliminación del CardView desactualizado
+                            elements.remove(valnodo-1);
+                            elements.add(0, new ListElement(R.drawable.cv_ic_sn ,pathNodo, "pH 1: "+valor1,
+                                    "CE: "+valor2,"Temperatura SN: "+valor3,
+                                    "Nivel 1: "+valor4,"Nivel 2: "+valor5,
+                                    "Nivel 3: "+valor6,"Nivel 4: "+valor7,
+                                    "Nivel 5: "+valor8,"Estado OK"));
+                        }else{
+                            // Mismo CardView del nodo
+                            // Eliminación del CardView desactualizado
+                            elements.remove(valnodo-1);
+                            elements.add(valnodo-1, new ListElement(R.drawable.cv_ic_crop ,pathNodo, "Temperatura: "+valor1,
+                                    "Humedad relativa: "+valor2,"Luminosidad: "+valor3,
+                                    "Variable 4: "+valor4,"Variable 5: "+valor5,
+                                    "Variable 6: "+valor6,"Variable 7: "+valor7,
+                                    "Variable 8: "+valor8,"Estado OK"));
+                        }
                     }else{
-                        // Creación del CardView del nodo si no existe
-                        elements.add(0, new ListElement( pathNodo, "Variable 1: "+valor1,
-                                "Variable 2: "+valor2,"Variable 3: "+valor3,
-                                "Variable 4: "+valor4,"Variable 5: "+valor5,
-                                "Variable 6: "+valor6,"Variable 7: "+valor7,
-                                "Variable 8: "+valor8,"Estado OK"));
+                        if (valnodo == 1){
+                            elements.add(valnodo-1, new ListElement(R.drawable.cv_ic_sn ,pathNodo, "pH 1: "+valor1,
+                                    "CE: "+valor2,"Temperatura SN: "+valor3,
+                                    "Nivel 1: "+valor4,"Nivel 2: "+valor5,
+                                    "Nivel 3: "+valor6,"Nivel 4: "+valor7,
+                                    "Nivel 5: "+valor8,"Estado OK"));
+                        }else{
+                            elements.add(valnodo-1, new ListElement(R.drawable.cv_ic_crop ,pathNodo, "Temperatura: "+valor1,
+                                    "Humedad relativa: "+valor2,"Luminosidad: "+valor3,
+                                    "Variable 4: "+valor4,"Variable 5: "+valor5,
+                                    "Variable 6: "+valor6,"Variable 7: "+valor7,
+                                    "Variable 8: "+valor8,"Estado OK"));
+                        }
                     }
                     init();
                 }

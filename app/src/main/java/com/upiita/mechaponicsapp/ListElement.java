@@ -3,6 +3,7 @@ package com.upiita.mechaponicsapp;
 import java.io.Serializable;
 
 public class ListElement implements Serializable {
+    public int imacv;
     // Elementos a extraer de la base de datos en Firebase
     public String nodo;
     public String variable1;
@@ -16,10 +17,11 @@ public class ListElement implements Serializable {
     public String estado;
 
     // Constructor de los elementos a extraer de la base de datos
-    public ListElement(String nodo, String variable1,
+    public ListElement(int imacv, String nodo, String variable1,
                        String variable2, String variable3, String variable4,
                        String variable5, String variable6, String variable7,
                        String variable8, String estado) {
+        this.imacv = imacv;
         this.nodo = nodo;
         this.variable1 = variable1;
         this.variable2 = variable2;
@@ -33,6 +35,15 @@ public class ListElement implements Serializable {
     }
 
     // Gets y Sets de los elementos a extraer de la base de datos
+
+    public int getImacv() {
+        return imacv;
+    }
+
+    public void setImacv(int imacv) {
+        this.imacv = imacv;
+    }
+
     public String getNodo() {
         return nodo;
     }
