@@ -20,4 +20,6 @@
     <color name="third_color_bn">#00701a</color>
     // Color Recycler view texto
     <color name="rv_color_texto">#c79100</color>
+    // Color Boton logout
+    <color name="f4_color_btn_lo">#ff6659</color>
 </resources>

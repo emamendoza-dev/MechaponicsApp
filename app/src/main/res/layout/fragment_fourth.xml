@@ -1,14 +1,312 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FourthFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- CardViews de información del sistema -->
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="fourth" />
+        android:orientation="vertical">
 
+        <!-- CardView de perfil de usuario -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvf4Usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true">
+
+            <!-- Elementos de la CardView de Usuario -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    app:srcCompat="@drawable/lg_logoencabezado"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/f4_texto_desImageUs"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="6dp">
+
+                    <!-- Imagen del CardView -->
+
+                    <ImageView
+                        android:id="@+id/cv_iconImageView"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:paddingLeft="14dp"
+                        android:paddingRight="14dp"
+                        app:srcCompat="@drawable/mechaponics_logo" />
+
+                    <!-- Componentes de la CardView -->
+
+                    <LinearLayout
+                        android:id="@+id/linearL2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_toEndOf="@+id/cv_iconImageView"
+                        android:layout_toRightOf="@+id/cv_iconImageView"
+                        android:orientation="vertical">
+
+                        <!-- Nombre de la CardView -->
+
+                        <TextView
+                            android:id="@+id/tvInfoUsuario"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="75dp"
+                            android:text="@string/f4_texto_nomCardUsuario"
+                            android:textColor="@color/first_color"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <!-- Campo 1 del CardView -->
+
+                        <TextView
+                            android:id="@+id/tvInfoName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="3dp"
+                            android:text="@string/f4_texto_nameUs"
+                            android:textColor="@color/third_color"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <!-- Campo 2 del CardView -->
+
+                        <TextView
+                            android:id="@+id/tvInfoEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20dp"
+                            android:text="@string/f4_texto_emailUs"
+                            android:textColor="@color/third_color"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <!-- Botón de logout del CardView -->
+
+                        <Button
+                            android:id="@+id/btnCerrarS"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:drawableEnd="@drawable/lo_ic_logout"
+                            android:drawableTint="#fff"
+                            android:backgroundTint="@color/f4_color_btn_lo"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/f4_texto_btn_cerrarses" />
+
+                    </LinearLayout>
+
+                    <!-- Boton de editar información del CardView -->
+
+                    <Button
+                        android:id="@+id/btnCerrarS2"
+                        android:layout_width="85dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="6dp"
+                        android:layout_marginRight="6dp"
+                        android:drawableTint="#fff"
+                        android:textSize="12dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/f4_texto_btn_editarUs" />
+
+                </RelativeLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/cvf4Usuario"
+            android:layout_marginBottom="60dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- CardView de información del proyecto -->
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvf4InfoMecha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp"
+                    app:cardUseCompatPadding="true">
+
+                    <!-- Elementos de la CardView de Información del sistema -->
+
+                    <LinearLayout
+                        android:id="@+id/llInfoMecha"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="14dp"
+                        android:animateLayoutChanges="true">
+
+                        <!-- Titulo de la CardView -->
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:text="@string/f4_texto_nomCardMecha"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/first_color" />
+
+                        <!-- Texto de la CardView -->
+
+                        <TextView
+                            android:id="@+id/tvDesInfoMecha"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="15dp"
+                            android:justificationMode="inter_word"
+                            android:visibility="gone"
+                            android:text="@string/f4_texto_desCardMecha"
+                            android:textSize="20sp"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- CardView de información del hidroponía -->
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvf4InfoPonics"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp"
+                    app:cardUseCompatPadding="true">
+
+                    <!-- Elementos de la CardView de Información de hidroponía -->
+
+                    <LinearLayout
+                        android:id="@+id/llInfoPonics"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="14dp"
+                        android:animateLayoutChanges="true">
+
+                        <!-- Titulo de la CardView -->
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:text="@string/f4_texto_nomCardPonics"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/first_color" />
+
+                        <!-- Texto de la CardView -->
+
+                        <TextView
+                            android:id="@+id/tvDesInfoPonics"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="15dp"
+                            android:justificationMode="inter_word"
+                            android:visibility="gone"
+                            android:text="@string/f4_texto_desCardPonics"
+                            android:textSize="20sp"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- CardView de información del sistema -->
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvf4InfoSistema"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp"
+                    app:cardUseCompatPadding="true">
+
+                    <!-- Elementos de la CardView de Información de hidroponía -->
+
+                    <LinearLayout
+                        android:id="@+id/llInfoSistema"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="14dp"
+                        android:animateLayoutChanges="true">
+
+                        <!-- Titulo de la CardView -->
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:text="@string/f4_texto_nomCardSistema"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/first_color" />
+
+                        <!-- Texto de la CardView -->
+
+                        <TextView
+                            android:id="@+id/tvDesInfoSistema"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="15dp"
+                            android:justificationMode="inter_word"
+                            android:visibility="gone"
+                            android:text="@string/f4_texto_desCardSistema"
+                            android:textSize="20sp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 </FrameLayout>

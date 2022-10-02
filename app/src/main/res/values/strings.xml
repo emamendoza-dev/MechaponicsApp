@@ -81,4 +81,49 @@
     // Recycler view
     // Nombre de la descripción de las Cardviews
     <string name="rv_texto_descripcion">Selecciona un sistema para más detalles</string>
+
+    // Fourth fragment screen
+    // Texto de descipción de imagen del usuario
+    <string name="f4_texto_desImageUs">Imagen de perfil del usuario </string>
+    // Texto de CardView de información de usuario
+    <string name="f4_texto_nomCardUsuario">Cuenta</string>
+    // Texto nombre del usuario
+    <string name="f4_texto_nameUs">Mechaponics System</string>
+    // Texto de correo del usuario
+    <string name="f4_texto_emailUs">mechaponicssystem@gmail.com</string>
+    // Texto de sesión activada
+    <string name="f4_texto_sesionactiva">Activo</string>
+    // Texto boton cerrar sesión
+    <string name="f4_texto_btn_cerrarses">Cerrar sesión</string>
+    // Texto boton editar datos de usuario
+    <string name="f4_texto_btn_editarUs">Editar</string>
+    // Texto de CardView de información del proyecto
+    <string name="f4_texto_nomCardMecha">Mechaponics System</string>
+    // Texto de descripción de la CardView del poryecto
+    <string name="f4_texto_desCardMecha">
+        Mechaponics es un proyecto para cultivar hortalizas en la comodidad de su hogar, coloque sus
+        platúlas de lechuga, encienda el sistema y disfrute de su cosecha.
+    </string>
+    // Texto de CardView de información de hidroponía
+    <string name="f4_texto_nomCardPonics">Hidroponía</string>
+    // Texto de descripción de la CardView del poryecto
+    <string name="f4_texto_desCardPonics">
+        Se le llama así a la agricultura sin suelo, un método para cultivar plantas utilizando
+        disoluciones minerales.
+    </string>
+    // Texto de CardView de información de hidroponía
+    <string name="f4_texto_nomCardSistema">Manual de usuario</string>
+    // Texto de descripción de la CardView del poryecto
+    <string name="f4_texto_desCardSistema">
+        Se le llama así a la agricultura sin suelo, un método para cultivar plantas utilizando
+        disoluciones minerales.
+        Se le llama así a la agricultura sin suelo, un método para cultivar plantas utilizando
+        disoluciones minerales.
+        Se le llama así a la agricultura sin suelo, un método para cultivar plantas utilizando
+        disoluciones minerales.
+        Se le llama así a la agricultura sin suelo, un método para cultivar plantas utilizando
+        disoluciones minerales.
+        Se le llama así a la agricultura sin suelo, un método para cultivar plantas utilizando
+        disoluciones minerales.
+    </string>
 </resources>

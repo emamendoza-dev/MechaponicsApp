@@ -15,6 +15,7 @@ tools:context=".FirstFragment">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
         android:text="@string/rv_texto_descripcion"
         android:textColor="@color/rv_color_texto"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView"
@@ -32,7 +33,10 @@ tools:context=".FirstFragment">
         android:layout_marginEnd="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.811" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
