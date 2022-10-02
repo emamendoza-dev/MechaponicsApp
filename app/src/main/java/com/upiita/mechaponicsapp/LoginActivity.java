@@ -9,6 +9,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText correo;
     private EditText contrasena;
     Button btnIniciarSes;
+    TextView contrasenaOlvi;
 
     // Función onCreate
     @Override
@@ -39,11 +41,21 @@ public class LoginActivity extends AppCompatActivity {
         correo = findViewById(R.id.edtEmail);
         contrasena = findViewById(R.id.edtContrasena);
         btnIniciarSes = findViewById(R.id.btnInciarS);
-
+        contrasenaOlvi = findViewById(R.id.tvContrasenaOlvidada);
+        // Función de boton presionado
         btnIniciarSes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 validate();
+            }
+        });
+        // Funcion para contraseña olvidada
+        contrasenaOlvi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(LoginActivity.this, ForgotPassword.class);
+                startActivity(i);
+                finish();
             }
         });
     }
@@ -94,6 +106,7 @@ public class LoginActivity extends AppCompatActivity {
                             // Cambio de ventana
                             Intent i = new Intent(getApplicationContext(), InitActivity.class);
                             startActivity(i);
+                            finish();
                         } else {
                             // Inicio de sesión incorrecto
                             // Notificación al usuario de proceso fallido
@@ -109,6 +122,7 @@ public class LoginActivity extends AppCompatActivity {
         // Cambio a ventana de registro
         Intent i = new Intent(this, RegistroActivity.class);
         startActivity(i);
+        finish();
     }
 
 }

@@ -35,4 +35,14 @@
     <string name="su_text_ContrasenaCR">Confirme contraseña</string>
     // Texto boton de registro
     <string name="su_btn_registroU">Registrar</string>
+
+    // Login screen
+    // Texto de contraseña olvidada
+    <string name="lg_texto_contraOlvidad">¿Olvidaste tu contraseña?</string>
+
+    // Forgot screen
+    // Texto para recuperar contraseña
+    <string name="fp_texto_recuperarcontra">Ingresa un correo para restablecer tu contraseña</string>
+    // Texto boton recuperar contraseña
+    <string name="fp_btn_recuperar">Recuperar</string>
 </resources>
