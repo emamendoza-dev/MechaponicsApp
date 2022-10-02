@@ -40,7 +40,7 @@ public class RegistroActivity extends AppCompatActivity {
         correo = findViewById(R.id.edtUsuarioR);
         contrasena = findViewById(R.id.edtContrasenaR);
         confContrasena = findViewById(R.id.edtContrasenaCR);
-        btnRegistrar = findViewById(R.id.btnRegistarU);
+        btnRegistrar = findViewById(R.id.btnRecuperar);
         // Función del boton de registro
         btnRegistrar.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -59,6 +59,14 @@ public class RegistroActivity extends AppCompatActivity {
         /*if(currentUser != null){
             reload();
         }*/
+    }
+
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        Intent intent = new Intent(RegistroActivity.this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     // Función para validar datos
