@@ -14,4 +14,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    // Colores de Bottom Navigation
+    <color name="primary_color_bn">#76d275</color>
+    <color name="second_color_bn">#43a047</color>
+    <color name="third_color_bn">#00701a</color>
 </resources>
