@@ -5,27 +5,27 @@
 
     <item
         android:id="@+id/firstFragment"
-        android:icon="@drawable/lg_ic_login"
+        android:icon="@drawable/f1_ic_home"
         android:title="@string/bn_firstFragment" />
 
     <!-- Opción dos para gestión del sistema -->
 
     <item
         android:id="@+id/secondFragment"
-        android:icon="@drawable/lg_ic_contrasena"
+        android:icon="@drawable/f1_ic_changeval"
         android:title="@string/bn_secondFragment" />
 
     <!-- Opción tres para configuración del sistema -->
 
     <item
         android:id="@+id/thirdFragment"
-        android:icon="@drawable/lg_ic_email"
+        android:icon="@drawable/f1_ic_settings"
         android:title="@string/bn_thirdFragment" />
 
     <!-- Opción cuatro para ayuda del sistema -->
 
     <item
         android:id="@+id/fourthFragment"
-        android:icon="@drawable/lg_ic_login"
+        android:icon="@drawable/f1_ic_help"
         android:title="@string/bn_fourthFragment" />
 </menu>
