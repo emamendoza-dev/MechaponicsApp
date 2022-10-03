@@ -172,4 +172,16 @@
     <string name="f3_texto_modExRiego">Número de riegos al día</string>
     // Texto del sheet dialog de cambio de variables del modo de sistema
     <string name="f3_texto_chnageMod">Modo Experto</string>
+    // Texto del slider SN variable 1
+    <string name="f3_texto_sliderSNVar1">pH del sistema a:</string>
+    // Texto del slider SN variable 2
+    <string name="f3_texto_sliderSNVar2">CE del sistema a:</string>
+    // Texto del slider CC variable 1
+    <string name="f3_texto_sliderCCVar1">Temperatura del sistema a:</string>
+    // Texto del slider CC variable 3
+    <string name="f3_texto_sliderCCVar2">Humedad del sistema a:</string>
+    // Texto del slider CC variable 3
+    <string name="f3_texto_sliderCCVar3">Luminosidad del sistema a:</string>
+    // Texto del slider CC variable 4
+    <string name="f3_texto_sliderCCVar4">Riegos del sistema a:</string>
 </resources>

@@ -204,7 +204,7 @@ tools:context=".ThirdFragment">
 
                 <LinearLayout
                     android:id="@+id/linearCL2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="4dp"
@@ -232,7 +232,7 @@ tools:context=".ThirdFragment">
                     <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/swChangeMod"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:checked="true"
                         android:text="@string/f3_texto_changemodo"
                         android:textColor="@color/second_color"
@@ -246,14 +246,14 @@ tools:context=".ThirdFragment">
 
                 <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_below="@id/linearCL2"
                     android:layout_marginLeft="80dp"
-                    android:layout_marginBottom="60dp">
+                    android:layout_marginBottom="50dp">
 
                     <LinearLayout
                         android:id="@+id/linearConfigMod"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/cv_CiconImageView"
                         android:layout_marginStart="4dp"
@@ -262,7 +262,7 @@ tools:context=".ThirdFragment">
                         android:layout_below="@+id/linearCL2"
                         android:animateLayoutChanges="true"
                         android:orientation="vertical"
-                        >
+                        android:visibility="gone">
 
                         <View
                             android:layout_width="wrap_content"
@@ -272,62 +272,90 @@ tools:context=".ThirdFragment">
 
                         <!-- Texto de variables de la SN -->
 
-                        <TextView
-                            android:id="@+id/tvMSN"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="3dp"
-                            android:fontFamily="@font/poppins_regular"
-                            android:text="@string/f3_texto_modSN"
-                            android:textColor="@color/f3_color_text_nodoon"
-                            android:textSize="13sp"
-                            android:textStyle="bold" />
-
-                        <!-- Texto de variable 1 de la SN -->
-
-                        <TextView
-                            android:id="@+id/tvMSNVar1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginBottom="3dp"
-                            android:fontFamily="@font/poppins_regular"
-                            android:text="@string/f3_texto_modExpH"
-                            android:textColor="@color/f3_color_text_variables"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
-
-                        <!-- Slider de la variable 1 de la SN -->
-
-                        <com.google.android.material.slider.Slider
+                        <LinearLayout
+                            android:id="@+id/layouttvMSN"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:valueFrom="5.0"
-                            android:valueTo="6.0"
-                            android:stepSize="0.1" />
+                            android:animateLayoutChanges="true"
+                            android:orientation="vertical">
 
-                        <!-- Texto de variable 2 de la SN -->
+                            <TextView
+                                android:id="@+id/tvMSN"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="3dp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:text="@string/f3_texto_modSN"
+                                android:textColor="@color/f3_color_text_nodoon"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
 
-                        <TextView
-                            android:id="@+id/tvMSNVar2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginBottom="3dp"
-                            android:fontFamily="@font/poppins_regular"
-                            android:text="@string/f3_texto_modExCE"
-                            android:textColor="@color/f3_color_text_variables"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
+                            <LinearLayout
+                                android:id="@+id/linearConfigSN"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:animateLayoutChanges="true"
+                                android:orientation="vertical"
+                                android:visibility="gone">
 
-                        <!-- Slider de la variable 2 de la SN -->
+                                <!-- Texto de variable 1 de la SN -->
 
-                        <com.google.android.material.slider.Slider
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:valueFrom="5.0"
-                            android:valueTo="6.0"
-                            android:stepSize="0.1" />
+                                <TextView
+                                    android:id="@+id/tvMSNVar1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginBottom="3dp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:text="@string/f3_texto_modExpH"
+                                    android:textColor="@color/f3_color_text_variables"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <!-- Slider de la variable 1 de la SN -->
+
+                                <com.google.android.material.slider.Slider
+                                    android:id="@+id/sliderSNVar1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:valueFrom="5.0"
+                                    android:valueTo="6.0"
+                                    android:stepSize="0.1" />
+
+                                <!-- Texto de variable 2 de la SN -->
+
+                                <TextView
+                                    android:id="@+id/tvMSNVar2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginBottom="3dp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:text="@string/f3_texto_modExCE"
+                                    android:textColor="@color/f3_color_text_variables"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <!-- Slider de la variable 2 de la SN -->
+
+                                <com.google.android.material.slider.Slider
+                                    android:id="@+id/sliderSNVar2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:valueFrom="5.0"
+                                    android:valueTo="6.0"
+                                    android:stepSize="0.1" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layouttvMCC"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="vertical">
 
                         <!-- Texto de variables de la CC -->
 
@@ -342,97 +370,115 @@ tools:context=".ThirdFragment">
                             android:textSize="13sp"
                             android:textStyle="bold" />
 
-                        <!-- Texto de variable 1 de la CC -->
-
-                        <TextView
-                            android:id="@+id/tvMCCVar1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginBottom="3dp"
-                            android:fontFamily="@font/poppins_regular"
-                            android:text="@string/f3_texto_modExTemp"
-                            android:textColor="@color/f3_color_text_variables"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
-
-                        <!-- Slider de la variable 1 de la CC -->
-
-                        <com.google.android.material.slider.Slider
+                        <LinearLayout
+                            android:id="@+id/linearConfigCC"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:valueFrom="5.0"
-                            android:valueTo="6.0"
-                            android:stepSize="0.1" />
+                            android:animateLayoutChanges="true"
+                            android:orientation="vertical"
+                            android:visibility="gone">
 
-                        <!-- Texto de variable 2 de la CC -->
+                            <!-- Texto de variable 1 de la CC -->
 
-                        <TextView
-                            android:id="@+id/tvMCCVar2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginBottom="3dp"
-                            android:fontFamily="@font/poppins_regular"
-                            android:text="@string/f3_texto_modExHum"
-                            android:textColor="@color/f3_color_text_variables"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/tvMCCVar1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginBottom="3dp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:text="@string/f3_texto_modExTemp"
+                                android:textColor="@color/f3_color_text_variables"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
 
-                        <!-- Slider de la variable 2 de la CC -->
+                            <!-- Slider de la variable 1 de la CC -->
 
-                        <com.google.android.material.slider.Slider
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:valueFrom="5.0"
-                            android:valueTo="6.0"
-                            android:stepSize="0.1" />
+                            <com.google.android.material.slider.Slider
+                                android:id="@+id/sliderCCVar1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:valueFrom="5.0"
+                                android:valueTo="6.0"
+                                android:stepSize="0.1" />
 
-                        <!-- Texto de variable 3 de la CC -->
+                            <!-- Texto de variable 2 de la CC -->
 
-                        <TextView
-                            android:id="@+id/tvMCCVar3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginBottom="3dp"
-                            android:fontFamily="@font/poppins_regular"
-                            android:text="@string/f3_texto_modExLum"
-                            android:textColor="@color/f3_color_text_variables"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/tvMCCVar2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginBottom="3dp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:text="@string/f3_texto_modExHum"
+                                android:textColor="@color/f3_color_text_variables"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
 
-                        <!-- Slider de la variable 3 de la CC -->
+                            <!-- Slider de la variable 2 de la CC -->
 
-                        <com.google.android.material.slider.Slider
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:valueFrom="5.0"
-                            android:valueTo="6.0"
-                            android:stepSize="0.1" />
+                            <com.google.android.material.slider.Slider
+                                android:id="@+id/sliderCCVar2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:valueFrom="5.0"
+                                android:valueTo="6.0"
+                                android:stepSize="0.1" />
 
-                        <!-- Texto de variable 4 de la CC -->
+                            <!-- Texto de variable 3 de la CC -->
 
-                        <TextView
-                            android:id="@+id/tvMCCVar4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginBottom="3dp"
-                            android:fontFamily="@font/poppins_regular"
-                            android:text="@string/f3_texto_modExRiego"
-                            android:textColor="@color/f3_color_text_variables"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/tvMCCVar3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginBottom="3dp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:text="@string/f3_texto_modExLum"
+                                android:textColor="@color/f3_color_text_variables"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
 
-                        <!-- Slider de la variable 4 de la CC -->
+                            <!-- Slider de la variable 3 de la CC -->
 
-                        <com.google.android.material.slider.Slider
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:valueFrom="5.0"
-                            android:valueTo="6.0"
-                            android:stepSize="0.1" />
+                            <com.google.android.material.slider.Slider
+                                android:id="@+id/sliderCCVar3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:valueFrom="5.0"
+                                android:valueTo="6.0"
+                                android:stepSize="0.1" />
+
+                            <!-- Texto de variable 4 de la CC -->
+
+                            <TextView
+                                android:id="@+id/tvMCCVar4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginBottom="3dp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:text="@string/f3_texto_modExRiego"
+                                android:textColor="@color/f3_color_text_variables"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <!-- Slider de la variable 4 de la CC -->
+
+                            <com.google.android.material.slider.Slider
+                                android:id="@+id/sliderCCVar4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:valueFrom="5.0"
+                                android:valueTo="6.0"
+                                android:stepSize="0.1" />
+
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                         <!-- Boton de editar configuración del modo del CardView -->
 
