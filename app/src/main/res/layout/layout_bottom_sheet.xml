@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bottomSheetContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -44,19 +45,29 @@
             android:gravity="center_vertical"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <EditText
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/f4_texto_sf4_usuario"
-                android:textColor="@color/black"
-                android:textSize="13sp"/>
+                android:id="@+id/etENickname"
+                android:hint="@string/f4_texto_sf4_usuario"
+                android:padding="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColorHint="@color/second_color"
+                android:background="@drawable/round_edittext" />
 
-            <TextView
-                android:layout_width="wrap_content"
+            <EditText
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/f4_texto_sf4_email"
-                android:textColor="@color/black"
-                android:textSize="13sp"/>
+                android:id="@+id/etECorreo"
+                android:hint="@string/f4_texto_sf4_email"
+                android:fontFamily="@font/poppins_medium"
+                android:padding="10dp"
+                android:inputType="textEmailAddress"
+                android:layout_marginBottom="10dp"
+                android:textColorHint="@color/second_color"
+                android:background="@drawable/round_edittext"/>
+
 
         </LinearLayout>
     </LinearLayout>
@@ -64,6 +75,8 @@
     <View
         android:layout_width="wrap_content"
         android:layout_height="1dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
         android:layout_marginBottom="10dp"
         android:background="@color/first_color" />
 
@@ -74,9 +87,14 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:layout_marginEnd="6dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginRight="6dp"
+        android:layout_marginBottom="10dp"
+        android:drawableEnd="@drawable/bse_ic_edit"
+        android:textColor="#fff"
         android:drawableTint="#fff"
+        android:backgroundTint="@color/second_color"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/f4_texto_btn_editarUs"
         android:textSize="12dp" />

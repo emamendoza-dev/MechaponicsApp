@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,6 +29,8 @@ public class FourthFragment extends Fragment {
     TextView detalleCVInfo, detalleCVPonics, detalleCVSistema;
     LinearLayout layoutInfo, layoutPonics, layoutSistema, layoutSheet;
     CardView cvInfo, cvPonics, cvSistema;
+    TextView nickname, correo;
+    EditText nicknamec, correoc;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,6 +39,8 @@ public class FourthFragment extends Fragment {
 
         btnLogout = view.findViewById(R.id.btnCerrarS);
         btnEditUs = view.findViewById(R.id.btnEditUs);
+        nickname = view.findViewById(R.id.tvInfoName);
+        correo = view.findViewById(R.id.tvInfoEmail);
         detalleCVInfo = view.findViewById(R.id.tvDesInfoMecha);
         detalleCVPonics = view.findViewById(R.id.tvDesInfoPonics);
         detalleCVSistema = view.findViewById(R.id.tvDesInfoSistema);
@@ -64,13 +69,17 @@ public class FourthFragment extends Fragment {
             public void onClick(View view) {
                 BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
                         getActivity(), R.style.BottomSheetDialogTheme);
+                //bottomSheetDialog.setContentView(R.layout.layout_bottom_sheet);
                 View bottomSheetView = LayoutInflater.from(getActivity().getApplicationContext())
                         .inflate(
                                 R.layout.layout_bottom_sheet, layoutSheet);
-
+                nicknamec = bottomSheetView.findViewById(R.id.etENickname);
+                correoc = bottomSheetView.findViewById(R.id.etECorreo);
                 bottomSheetView.findViewById(R.id.btnCambioUs).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        nickname.setText(nicknamec.getText());
+                        correo.setText(correoc.getText());
                         Toast.makeText(getActivity(), "Cambios guardados", Toast.LENGTH_SHORT).show();
                         bottomSheetDialog.dismiss();
                     }
