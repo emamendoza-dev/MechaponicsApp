@@ -132,4 +132,42 @@
     <string name="f4_texto_sf4_usuario">Nombre de usuario:</string>}
     // Correo de usuario Bottom Sheet
     <string name="f4_texto_sf4_email">Correo:</string>
+
+    // Thrid fragment screen
+    // Texto de descipción de imagen del usuario
+    <string name="f3_texto_desImageNodos">Imagen del sistema</string>
+    // Texto de CardView de información de usuario
+    <string name="f3_texto_nomCardNodos">Nodos del sistema</string>
+    // Texto de Nodo 1
+    <string name="f3_texto_nomNodo1">Sin nodo SN</string>
+    // Texto de Nodo 2
+    <string name="f3_texto_nomNodo2">Sin nodo de cultivo 1</string>
+    // Texto de Nodo 3
+    <string name="f3_texto_nomNodo3">Sin nodo de cultivo 2</string>
+    // Texto de Nodo 4
+    <string name="f3_texto_nomNodo4">Sin nodo de cultivo 3</string>
+    // Texto boton agregar nodo
+    <string name="f3_texto_btn_agregar">Agregar</string>
+    // Texto de CardView de modos de operación sistema
+    <string name="f3_texto_nomCardModos">Configuración del sistema</string>
+    // Texto del switch de cambio de mod
+    <string name="f3_texto_changemodo">Modo de operación automático</string>
+    // Texto de valor de la SN
+    <string name="f3_texto_modSN">Solución nutritiva</string>
+    // Texto del botón de modificación de los parámetros del modo experto
+    <string name="f3_texto_btn_modificar">Modificar</string>
+    // Texto de variable 1 de la SN
+    <string name="f3_texto_modExpH">pH de la solución nutritiva </string>
+    // Texto de variable 2 de la SN
+    <string name="f3_texto_modExCE">CE de la solución nutritiva </string>
+    // Texto de valor de la SN
+    <string name="f3_texto_modCC">Celda de cultivo</string>
+    // Texto de variable 1 de la CC
+    <string name="f3_texto_modExTemp">Temperatura de la celda de cultivo</string>
+    // Texto de variable 2 de la CC
+    <string name="f3_texto_modExHum">Humedad de la celda de cultivo</string>
+    // Texto de variable 3 de la CC
+    <string name="f3_texto_modExLum">Luminisidad de la celda de cultivo</string>
+    // Texto de variable 3 de la CC
+    <string name="f3_texto_modExRiego">Número de riegos al día</string>
 </resources>
