@@ -170,4 +170,6 @@
     <string name="f3_texto_modExLum">Luminisidad de la celda de cultivo</string>
     // Texto de variable 3 de la CC
     <string name="f3_texto_modExRiego">Número de riegos al día</string>
+    // Texto del sheet dialog de cambio de variables del modo de sistema
+    <string name="f3_texto_chnageMod">Modo Experto</string>
 </resources>

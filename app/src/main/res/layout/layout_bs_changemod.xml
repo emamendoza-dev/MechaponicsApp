@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="15dp"
-        android:text="@string/f4_texto_sf4_titulo"
+        android:text="@string/f3_texto_chnageMod"
         android:textColor="@color/first_color"
         android:textSize="18sp"
         android:textStyle="bold"/>
@@ -30,22 +30,7 @@
         android:orientation="horizontal"
         android:padding="5dp">
 
-        <com.makeramen.roundedimageview.RoundedImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="10dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/mechaponics_logo"
-            app:riv_corner_radius="20dp"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="10dp"
-            android:gravity="center_vertical"
-            android:orientation="vertical">
-
-        </LinearLayout>
     </LinearLayout>
 
     <View
