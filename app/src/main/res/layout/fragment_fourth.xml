@@ -125,7 +125,7 @@
                     <!-- Boton de editar información del CardView -->
 
                     <Button
-                        android:id="@+id/btnCerrarS2"
+                        android:id="@+id/btnEditUs"
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -134,9 +134,9 @@
                         android:layout_marginEnd="6dp"
                         android:layout_marginRight="6dp"
                         android:drawableTint="#fff"
-                        android:textSize="12dp"
                         android:fontFamily="@font/poppins_medium"
-                        android:text="@string/f4_texto_btn_editarUs" />
+                        android:text="@string/f4_texto_btn_editarUs"
+                        android:textSize="12dp" />
 
                 </RelativeLayout>
             </LinearLayout>

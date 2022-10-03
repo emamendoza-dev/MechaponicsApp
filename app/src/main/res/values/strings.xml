@@ -126,4 +126,10 @@
         Se le llama así a la agricultura sin suelo, un método para cultivar plantas utilizando
         disoluciones minerales.
     </string>
+    // Bottom Sheet del fragemento 4
+    <string name="f4_texto_sf4_titulo">Usuario</string>
+    // Nombre de usuario Bottom Sheet
+    <string name="f4_texto_sf4_usuario">Nombre de usuario:</string>}
+    // Correo de usuario Bottom Sheet
+    <string name="f4_texto_sf4_email">Correo:</string>
 </resources>

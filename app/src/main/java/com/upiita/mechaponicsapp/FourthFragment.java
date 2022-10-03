@@ -15,15 +15,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.firebase.auth.FirebaseAuth;
 
 
 public class FourthFragment extends Fragment {
 
     Button btnLogout;
+    Button btnEditUs;
     TextView detalleCVInfo, detalleCVPonics, detalleCVSistema;
-    LinearLayout layoutInfo, layoutPonics, layoutSistema;
+    LinearLayout layoutInfo, layoutPonics, layoutSistema, layoutSheet;
     CardView cvInfo, cvPonics, cvSistema;
 
     @Override
@@ -32,12 +35,14 @@ public class FourthFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_fourth, container, false);
 
         btnLogout = view.findViewById(R.id.btnCerrarS);
+        btnEditUs = view.findViewById(R.id.btnEditUs);
         detalleCVInfo = view.findViewById(R.id.tvDesInfoMecha);
         detalleCVPonics = view.findViewById(R.id.tvDesInfoPonics);
         detalleCVSistema = view.findViewById(R.id.tvDesInfoSistema);
         layoutInfo = view.findViewById(R.id.llInfoMecha);
         layoutPonics = view.findViewById(R.id.llInfoPonics);
         layoutSistema = view.findViewById(R.id.llInfoSistema);
+        layoutSheet = view.findViewById(R.id.bottomSheetContainer);
         layoutInfo.getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
         layoutPonics.getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
         layoutSistema.getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
@@ -51,6 +56,27 @@ public class FourthFragment extends Fragment {
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        btnEditUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
+                        getActivity(), R.style.BottomSheetDialogTheme);
+                View bottomSheetView = LayoutInflater.from(getActivity().getApplicationContext())
+                        .inflate(
+                                R.layout.layout_bottom_sheet, layoutSheet);
+
+                bottomSheetView.findViewById(R.id.btnCambioUs).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(getActivity(), "Cambios guardados", Toast.LENGTH_SHORT).show();
+                        bottomSheetDialog.dismiss();
+                    }
+                });
+                bottomSheetDialog.setContentView(bottomSheetView);
+                bottomSheetDialog.show();
             }
         });
 
