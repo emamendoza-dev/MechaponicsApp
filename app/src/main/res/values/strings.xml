@@ -45,4 +45,91 @@
     <string name="fp_texto_recuperarcontra">Ingresa un correo para restablecer tu contraseña</string>
     // Texto boton recuperar contraseña
     <string name="fp_btn_recuperar">Recuperar</string>
+
+    // Init screen
+    // Nombre primer fragmento
+    <string name="bn_firstFragment">Home</string>
+    // Nombre segundo fragmento
+    <string name="bn_secondFragment">Modos</string>
+    // Nombre tercero fragmento
+    <string name="bn_thirdFragment">Configuración</string>
+    // Nombre cuarto fragmento
+    <string name="bn_fourthFragment">Ayuda</string>
+
+    // First fragment screen
+    // CardView
+    // Nombre del nodo
+    <string name="cv_label_nodo">Nodo X</string>
+    // Variable 1
+    <string name="cv_label_var1">Variable 1</string>
+    // Variable 2
+    <string name="cv_label_var2">Variable 2</string>
+    // Variable 3
+    <string name="cv_label_var3">Variable 3</string>
+    // Variable 4
+    <string name="cv_label_var4">Variable 4</string>
+    // Variable 5
+    <string name="cv_label_var5">Variable 5</string>
+    // Variable 6
+    <string name="cv_label_var6">Variable 6</string>
+    // Variable 7
+    <string name="cv_label_var7">Variable 7</string>
+    // Variable 8
+    <string name="cv_label_var8">Variable 8</string>
+    // Estado
+    <string name="cv_label_estado">Estado</string>
+    // Recycler view
+    // Nombre de la descripción de las Cardviews
+    <string name="rv_texto_descripcion">Selecciona un sistema para más detalles</string>
+
+    // Fourth fragment screen
+    // Texto de descipción de imagen del usuario
+    <string name="f4_texto_desImageUs">Imagen de perfil del usuario </string>
+    // Texto de CardView de información de usuario
+    <string name="f4_texto_nomCardUsuario">Cuenta</string>
+    // Texto nombre del usuario
+    <string name="f4_texto_nameUs">Mechaponics System</string>
+    // Texto de correo del usuario
+    <string name="f4_texto_emailUs">mechaponicssystem@gmail.com</string>
+    // Texto de sesión activada
+    <string name="f4_texto_sesionactiva">Activo</string>
+    // Texto boton cerrar sesión
+    <string name="f4_texto_btn_cerrarses">Cerrar sesión</string>
+    // Texto boton editar datos de usuario
+    <string name="f4_texto_btn_editarUs">Editar</string>
+    // Texto de CardView de información del proyecto
+    <string name="f4_texto_nomCardMecha">Mechaponics System</string>
+    // Texto de descripción de la CardView del poryecto
+    <string name="f4_texto_desCardMecha">
+        Mechaponics es un proyecto para cultivar hortalizas en la comodidad de su hogar, coloque sus
+        platúlas de lechuga, encienda el sistema y disfrute de su cosecha.
+    </string>
+    // Texto de CardView de información de hidroponía
+    <string name="f4_texto_nomCardPonics">Hidroponía</string>
+    // Texto de descripción de la CardView del poryecto
+    <string name="f4_texto_desCardPonics">
+        Se le llama así a la agricultura sin suelo, un método para cultivar plantas utilizando
+        disoluciones minerales.
+    </string>
+    // Texto de CardView de información de hidroponía
+    <string name="f4_texto_nomCardSistema">Manual de usuario</string>
+    // Texto de descripción de la CardView del poryecto
+    <string name="f4_texto_desCardSistema">
+        Se le llama así a la agricultura sin suelo, un método para cultivar plantas utilizando
+        disoluciones minerales.
+        Se le llama así a la agricultura sin suelo, un método para cultivar plantas utilizando
+        disoluciones minerales.
+        Se le llama así a la agricultura sin suelo, un método para cultivar plantas utilizando
+        disoluciones minerales.
+        Se le llama así a la agricultura sin suelo, un método para cultivar plantas utilizando
+        disoluciones minerales.
+        Se le llama así a la agricultura sin suelo, un método para cultivar plantas utilizando
+        disoluciones minerales.
+    </string>
+    // Bottom Sheet del fragemento 4
+    <string name="f4_texto_sf4_titulo">Usuario</string>
+    // Nombre de usuario Bottom Sheet
+    <string name="f4_texto_sf4_usuario">Nombre de usuario:</string>}
+    // Correo de usuario Bottom Sheet
+    <string name="f4_texto_sf4_email">Correo:</string>
 </resources>
