@@ -4,6 +4,7 @@ import android.animation.LayoutTransition;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
@@ -20,6 +21,11 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class FourthFragment extends Fragment {
@@ -32,10 +38,36 @@ public class FourthFragment extends Fragment {
     TextView nickname, correo;
     EditText nicknamec, correoc;
 
+    // Ruta principal del proyecto de la base de datos al apartado de Usuario
+    String pathProyecto = "MechaponicsSystem/Usuario";
+    String nicknameb, correob;
+
+    // Objeto de Firebase para obtener la referencia de obtención de datos de la base de datos
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_fourth, container, false);
+
+        // Referencia completa de ese nodo de la base de datos
+        DatabaseReference referenceUsuario = database.getReference(pathProyecto);
+
+        referenceUsuario.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                // Obtención de los valores de la base de datos
+                nicknameb = snapshot.child("Nickname").getValue().toString();
+                nickname.setText(nicknameb);
+                correob = snapshot.child("Correo").getValue().toString();
+                correo.setText(correob);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         btnLogout = view.findViewById(R.id.btnCerrarS);
         btnEditUs = view.findViewById(R.id.btnEditUs);
@@ -78,8 +110,11 @@ public class FourthFragment extends Fragment {
                 bottomSheetView.findViewById(R.id.btnCambioUs).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        nickname.setText(nicknamec.getText());
-                        correo.setText(correoc.getText());
+                        DatabaseReference mDatabase = database.getReference(pathProyecto);
+                        mDatabase.child("Nickname").setValue(nicknamec.getText().toString());
+                        mDatabase.child("Correo").setValue(correoc.getText().toString());
+                        //nickname.setText(nicknamec.getText());
+                        //correo.setText(correoc.getText());
                         Toast.makeText(getActivity(), "Cambios guardados", Toast.LENGTH_SHORT).show();
                         bottomSheetDialog.dismiss();
                     }
