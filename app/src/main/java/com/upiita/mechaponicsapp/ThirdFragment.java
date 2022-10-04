@@ -3,6 +3,7 @@ package com.upiita.mechaponicsapp;
 import android.animation.LayoutTransition;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.transition.AutoTransition;
@@ -20,6 +21,11 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.slider.RangeSlider;
 import com.google.android.material.slider.Slider;
 import com.google.android.material.switchmaterial.SwitchMaterial;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class ThirdFragment extends Fragment {
 
@@ -37,6 +43,12 @@ public class ThirdFragment extends Fragment {
     Slider sliderSNVar1, sliderSNVar2, sliderCCVar1, sliderCCVar2, sliderCCVar3, sliderCCVar4;
     float valSSNVar1, valSSNVar2, valSCCVar1, valSCCVar2, valSCCVar3, valSCCVar4;
     TextView tvSliderSNVar1, tvSliderSNVar2, tvSliderCCVar1, tvSliderCCVar2, tvSliderCCVar3, tvSliderCCVar4;
+
+    // Ruta principal del proyecto de la base de datos al apartado de Usuario
+    String pathProyecto = "MechaponicsSystem/Perfil";
+
+    // Objeto de Firebase para obtener la referencia de obtención de datos de la base de datos
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -56,17 +68,36 @@ public class ThirdFragment extends Fragment {
         modExperto = view.findViewById(R.id.swChangeMod);
 
         sliderSNVar1 = view.findViewById(R.id.sliderSNVar1);
-        sliderSNVar1.setValue(5.9f);
         sliderSNVar2 = view.findViewById(R.id.sliderSNVar2);
-        sliderSNVar2.setValue(5.8f);
         sliderCCVar1 = view.findViewById(R.id.sliderCCVar1);
-        sliderCCVar1.setValue(5.7f);
         sliderCCVar2 = view.findViewById(R.id.sliderCCVar2);
-        sliderCCVar2.setValue(5.6f);
         sliderCCVar3 = view.findViewById(R.id.sliderCCVar3);
-        sliderCCVar3.setValue(5.5f);
         sliderCCVar4 = view.findViewById(R.id.sliderCCVar4);
-        sliderCCVar4.setValue(5.4f);
+
+        DatabaseReference mDatabase = database.getReference(pathProyecto);
+
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String valor1 = snapshot.child("pH").getValue().toString();
+                sliderSNVar1.setValue(Float.parseFloat(valor1));
+                String valor2 = snapshot.child("CE").getValue().toString();
+                sliderSNVar2.setValue(Float.parseFloat(valor2));
+                String valor3 = snapshot.child("Temp").getValue().toString();
+                sliderCCVar1.setValue(Float.parseFloat(valor3));
+                String valor4 = snapshot.child("Hum").getValue().toString();
+                sliderCCVar2.setValue(Float.parseFloat(valor4));
+                String valor5 = snapshot.child("Lum").getValue().toString();
+                sliderCCVar3.setValue(Float.parseFloat(valor5));
+                String valor6 = snapshot.child("Rie").getValue().toString();
+                sliderCCVar4.setValue(Float.parseFloat(valor6));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         linearConfigMod.getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
         linearConfigSN.getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
@@ -79,6 +110,16 @@ public class ThirdFragment extends Fragment {
 
                 TransitionManager.beginDelayedTransition(linearConfigMod, new AutoTransition());
                 linearConfigMod.setVisibility(v);
+
+                if (modExperto.isChecked()){
+                    DatabaseReference mDatabase = database.getReference(pathProyecto);
+                    mDatabase.child("pH").setValue(5.9f);
+                    mDatabase.child("CE").setValue(5.8f);
+                    mDatabase.child("Temp").setValue(5.7f);
+                    mDatabase.child("Hum").setValue(5.6f);
+                    mDatabase.child("Lum").setValue(5.5f);
+                    mDatabase.child("Rie").setValue(5.4f);
+                }
             }
         });
 
@@ -133,6 +174,13 @@ public class ThirdFragment extends Fragment {
                 bottomSheetView.findViewById(R.id.btnCambioVarMod).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        DatabaseReference mDatabase = database.getReference(pathProyecto);
+                        mDatabase.child("pH").setValue(valSSNVar1);
+                        mDatabase.child("CE").setValue(valSSNVar2);
+                        mDatabase.child("Temp").setValue(valSCCVar1);
+                        mDatabase.child("Hum").setValue(valSCCVar2);
+                        mDatabase.child("Lum").setValue(valSCCVar3);
+                        mDatabase.child("Rie").setValue(valSCCVar4);
                         Toast.makeText(getActivity(), "Cambios guardados", Toast.LENGTH_SHORT).show();
                         bottomSheetDialog.dismiss();
                     }
