@@ -283,7 +283,7 @@ tools:context=".ThirdFragment">
                                 android:id="@+id/tvMSN"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="3dp"
+                                android:layout_marginBottom="10dp"
                                 android:fontFamily="@font/poppins_regular"
                                 android:text="@string/f3_texto_modSN"
                                 android:textColor="@color/f3_color_text_nodoon"
@@ -363,7 +363,7 @@ tools:context=".ThirdFragment">
                             android:id="@+id/tvMCC"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="3dp"
+                            android:layout_marginBottom="10dp"
                             android:fontFamily="@font/poppins_regular"
                             android:text="@string/f3_texto_modCC"
                             android:textColor="@color/f3_color_text_nodoon"
@@ -496,15 +496,202 @@ tools:context=".ThirdFragment">
                             android:fontFamily="@font/poppins_medium"
                             android:text="@string/f3_texto_btn_modificar"
                             android:textSize="12dp" />
-
                     </LinearLayout>
-
                 </ScrollView>
-
-
-
             </RelativeLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <!-- CardView de configuración del modo demostrativo del sistema -->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvf3Demostrativo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
+
+        <!-- Elementos de la CardView de Modos -->
+
+        <LinearLayout
+            android:id="@+id/layoutConfigDemos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="6dp">
+
+                <!-- Imagen del CardView -->
+
+                <ImageView
+                    android:id="@+id/cv_DiconImageView"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"
+                    app:srcCompat="@drawable/ima_test" />
+
+                <!-- Componentes de la CardView -->
+
+                <LinearLayout
+                    android:id="@+id/linearDL2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_toEndOf="@+id/cv_DiconImageView"
+                    android:layout_toRightOf="@+id/cv_DiconImageView"
+                    android:orientation="vertical">
+
+                    <!-- Nombre de la CardView -->
+
+                    <TextView
+                        android:id="@+id/tvCardDemos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="@string/f3_texto_nomCardDemos"
+                        android:textColor="@color/first_color"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <!-- Switch de cambio de modo -->
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/swChangeDemos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/f3_texto_sliderDemos"
+                        android:textColor="@color/second_color"
+                        app:useMaterialThemeColors="false"
+                        app:thumbTint="@color/primary_color_app"
+                        app:trackTint="@color/third_color_app"/>
+
+                </LinearLayout>
+
+                <!-- Componentes de la CardView -->
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linearDL2"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginBottom="55dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearConfigDemos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="2dp"
+                        android:animateLayoutChanges="true"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <View
+                            android:layout_width="wrap_content"
+                            android:layout_height="1dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="@color/second_color" />
+
+                        <!-- Texto de variables de la SN -->
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/f3_texto_seleChips"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="@color/f3_color_text_variables" />
+
+                        <!-- Opciones de la prueba -->
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/chipGroupDemos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/f3_texto_chip1"
+                                style="@style/Widget.MaterialComponents.Chip.Choice" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/f3_texto_chip2"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"/>
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/f3_texto_chip3"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"/>
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/f3_texto_chip4"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"/>
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/f3_texto_chip5"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"/>
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/f3_texto_chip6"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"/>
+
+                        </com.google.android.material.chip.ChipGroup>
+
+
+
+                        <!-- Boton de editar configuración del modo del CardView -->
+
+                        <Button
+                            android:id="@+id/btnRunDemos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="6dp"
+                            android:layout_marginRight="6dp"
+                            android:drawableEnd="@drawable/f3_ic_change"
+                            android:drawableTint="#fff"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/f3_texto_btn_demos"
+                            android:textSize="12dp" />
+
+                    </LinearLayout>
+                </ScrollView>
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
 </LinearLayout>
 </FrameLayout>

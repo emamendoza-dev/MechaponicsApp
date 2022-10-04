@@ -184,4 +184,24 @@
     <string name="f3_texto_sliderCCVar3">Luminosidad del sistema a:</string>
     // Texto del slider CC variable 4
     <string name="f3_texto_sliderCCVar4">Riegos del sistema a:</string>
+    // Texto de Cardview del modo demostrativo
+    <string name="f3_texto_nomCardDemos">Prueba del sistema</string>
+    // Texto para habilitar opciones de la prueba
+    <string name="f3_texto_sliderDemos">Habilitar opciones de la prueba</string>
+    // Texto de selección de opciones para prueba
+    <string name="f3_texto_seleChips">Selecione la configuración de la prueba</string>
+    // Texto de opción 1 de los chips
+    <string name="f3_texto_chip1">Dosificadores</string>
+    // Texto de opción 2 de los chips
+    <string name="f3_texto_chip2">Solución nutritiva</string>
+    // Texto de opción 3 de los chips
+    <string name="f3_texto_chip3">Irrigación</string>
+    // Texto de opción 4 de los chips
+    <string name="f3_texto_chip4">Temperatura</string>
+    // Texto de opción 5 de los chips
+    <string name="f3_texto_chip5">Humedad</string>
+    // Texto de opción 6 de los chips
+    <string name="f3_texto_chip6">Mediciones</string>
+    // Texto botón de ejecutar prueba demostrativo
+    <string name="f3_texto_btn_demos">Ejecutar prueba</string>
 </resources>

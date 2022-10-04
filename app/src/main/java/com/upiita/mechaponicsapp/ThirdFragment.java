@@ -29,14 +29,14 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ThirdFragment extends Fragment {
 
-    LinearLayout linearConfigMod, linearCongifCard;
+    LinearLayout linearConfigMod, linearCongifCard, linearConfigDemos;
     TextView tvMSN;
     LinearLayout linearConfigSN, layouttvMSN;
     TextView tvMCC;
     LinearLayout linearConfigCC, layouttvMCC;
     LinearLayout layoutSheet;
 
-    SwitchMaterial modExperto;
+    SwitchMaterial modExperto, modDemos;
 
     Button EditModo;
 
@@ -56,6 +56,7 @@ public class ThirdFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_third, container, false);
 
         linearConfigMod = view.findViewById(R.id.linearConfigMod);
+        linearConfigDemos = view.findViewById(R.id.linearConfigDemos);
         linearCongifCard = view.findViewById(R.id.layoutConfigMod);
         tvMSN = view.findViewById(R.id.tvMSN);
         linearConfigSN = view.findViewById(R.id.linearConfigSN);
@@ -66,6 +67,7 @@ public class ThirdFragment extends Fragment {
         layoutSheet = view.findViewById(R.id.bottomSheetContainerMod);
         EditModo = view.findViewById(R.id.btnEditModo);
         modExperto = view.findViewById(R.id.swChangeMod);
+        modDemos = view.findViewById(R.id.swChangeDemos);
 
         sliderSNVar1 = view.findViewById(R.id.sliderSNVar1);
         sliderSNVar2 = view.findViewById(R.id.sliderSNVar2);
@@ -120,6 +122,16 @@ public class ThirdFragment extends Fragment {
                     mDatabase.child("Lum").setValue(5.5f);
                     mDatabase.child("Rie").setValue(5.4f);
                 }
+            }
+        });
+
+        modDemos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int v = (linearConfigDemos.getVisibility() == View.GONE)? View.VISIBLE: View.GONE;
+
+                TransitionManager.beginDelayedTransition(linearConfigDemos, new AutoTransition());
+                linearConfigDemos.setVisibility(v);
             }
         });
 
