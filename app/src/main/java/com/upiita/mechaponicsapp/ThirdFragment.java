@@ -232,6 +232,13 @@ public class ThirdFragment extends Fragment {
                 DatabaseReference mDatabaseDemos = database.getReference(pathEstadoDemos);
                 mDatabaseDemos.child("Modo").setValue("D");
 
+                mDatabaseDemos.child("Dosificadores").setValue(boolModOp1);
+                mDatabaseDemos.child("Solucion").setValue(boolModOp2);
+                mDatabaseDemos.child("Irrigacion").setValue(boolModOp3);
+                mDatabaseDemos.child("Temperatura").setValue(boolModOp4);
+                mDatabaseDemos.child("Humedad").setValue(boolModOp5);
+                mDatabaseDemos.child("Mediciones").setValue(boolModOp6);
+
                 BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
                         getActivity(), R.style.BottomSheetDialogTheme);
                 //bottomSheetDialog.setContentView(R.layout.layout_bottom_sheet);
@@ -281,6 +288,13 @@ public class ThirdFragment extends Fragment {
                     public void onClick(View view) {
                         DatabaseReference mDatabaseDemos = database.getReference(pathEstadoDemos);
                         mDatabaseDemos.child("Modo").setValue("A");
+
+                        mDatabaseDemos.child("Dosificadores").setValue(false);
+                        mDatabaseDemos.child("Solucion").setValue(false);
+                        mDatabaseDemos.child("Irrigacion").setValue(false);
+                        mDatabaseDemos.child("Temperatura").setValue(false);
+                        mDatabaseDemos.child("Humedad").setValue(false);
+                        mDatabaseDemos.child("Mediciones").setValue(false);
                         Toast.makeText(getActivity(), "Prueba finalizada, regresando a modo automático", Toast.LENGTH_SHORT).show();
                         bottomSheetDialog.dismiss();
                     }
