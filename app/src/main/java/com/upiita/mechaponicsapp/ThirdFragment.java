@@ -1,6 +1,7 @@
 package com.upiita.mechaponicsapp;
 
 import android.animation.LayoutTransition;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 
@@ -146,9 +147,10 @@ public class ThirdFragment extends Fragment {
                 bottomSheetView.findViewById(R.id.btnConfigNodo).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
-                        Toast.makeText(getActivity(), "Nodo Configurado", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Abriendo configuración del nodo", Toast.LENGTH_SHORT).show();
                         bottomSheetDialog.dismiss();
+                        Intent i = new Intent(getActivity(), NodoWifiActivity.class);
+                        startActivity(i);
                     }
                 });
                 bottomSheetView.findViewById(R.id.btnDeleNodo).setOnClickListener(new View.OnClickListener() {

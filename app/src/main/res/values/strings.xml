@@ -223,4 +223,12 @@
     // Texto del nodo 4
     <string name="om_nodo4">Nodo 4</string>
 
+    // Pagina de configuracion del nodo wifi
+    // Texto de conexión con el ESP32
+    <string name="f3_texto_congifnodo">Conectese al ESP32 que va configurar</string>
+    // Texto de boton de nodo conectado listo
+    <string name="f3_texto_cinfignodo_ok">Activar</string>
+    // Texto de boton de nodo configurado
+    <string name="f3_texto_btn_nodoListo">Regresar</string>
+
 </resources>
