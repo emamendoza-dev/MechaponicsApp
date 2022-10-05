@@ -210,4 +210,17 @@
     <string name="f3_texto_bsDemos">Modo demostrativo</string>
     // Texto del boton del modo demostrativo bottom sheet
     <string name="f3_texto_btnDemos">Cancelar</string>
+
+    // Bottom sheet de la configuración de los nodos
+    // Texto
+    <string name="f3_texto_bs_confignodos"> Nodos del sistema </string>
+    // Texto del boton de agregar nodo
+    <string name="f3_texto_bs_btn1">Agregar nodo</string>
+    // Texto del boton de configurar nodo
+    <string name="f3_texto_bs_btn2">Configurar nodo</string>
+    // Texto del boton de elminar nodo
+    <string name="f3_texto_bs_btn3">Eliminar nodo</string>
+    // Texto del nodo 4
+    <string name="om_nodo4">Nodo 4</string>
+
 </resources>

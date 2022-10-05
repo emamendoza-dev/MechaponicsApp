@@ -9,18 +9,19 @@ import androidx.fragment.app.Fragment;
 
 import android.transition.AutoTransition;
 import android.transition.TransitionManager;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.chip.Chip;
-import com.google.android.material.slider.RangeSlider;
 import com.google.android.material.slider.Slider;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.firebase.database.DataSnapshot;
@@ -36,11 +37,11 @@ public class ThirdFragment extends Fragment {
     LinearLayout linearConfigSN, layouttvMSN;
     TextView tvMCC;
     LinearLayout linearConfigCC, layouttvMCC;
-    LinearLayout layoutSheet, layoutSheetDemos;
+    LinearLayout layoutSheet, layoutSheetDemos, layoutSheetNodos;
 
     SwitchMaterial modExperto, modDemos;
 
-    Button EditModo, btnRunDemos;
+    Button EditModo, btnRunDemos, btnAgregarNodo;
 
     Slider sliderSNVar1, sliderSNVar2, sliderCCVar1, sliderCCVar2, sliderCCVar3, sliderCCVar4;
     float valSSNVar1, valSSNVar2, valSCCVar1, valSCCVar2, valSCCVar3, valSCCVar4;
@@ -74,6 +75,8 @@ public class ThirdFragment extends Fragment {
         layouttvMCC = view.findViewById(R.id.layouttvMCC);
         layoutSheet = view.findViewById(R.id.bottomSheetContainerMod);
         layoutSheetDemos = view.findViewById(R.id.bottomSheetContainerMod);
+        layoutSheetNodos = view.findViewById(R.id.bottomSheetContainerNodos);
+        btnAgregarNodo = view.findViewById(R.id.btnAgregarNodo);
         EditModo = view.findViewById(R.id.btnEditModo);
         btnRunDemos = view.findViewById(R.id.btnRunDemos);
         modExperto = view.findViewById(R.id.swChangeMod);
@@ -121,6 +124,46 @@ public class ThirdFragment extends Fragment {
         linearConfigMod.getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
         linearConfigSN.getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
         linearConfigCC.getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
+
+        btnAgregarNodo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
+                        getActivity(), R.style.BottomSheetDialogTheme);
+                //bottomSheetDialog.setContentView(R.layout.layout_bottom_sheet);
+                View bottomSheetView = LayoutInflater.from(getActivity().getApplicationContext())
+                        .inflate(
+                                R.layout.layout_bs_confignodos, layoutSheetNodos);
+
+                bottomSheetView.findViewById(R.id.btnAddNodo).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        Toast.makeText(getActivity(), "Nodo Agregado", Toast.LENGTH_SHORT).show();
+                        bottomSheetDialog.dismiss();
+                    }
+                });
+                bottomSheetView.findViewById(R.id.btnConfigNodo).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        Toast.makeText(getActivity(), "Nodo Configurado", Toast.LENGTH_SHORT).show();
+                        bottomSheetDialog.dismiss();
+                    }
+                });
+                bottomSheetView.findViewById(R.id.btnDeleNodo).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        Toast.makeText(getActivity(), "Nodo Eliminado", Toast.LENGTH_SHORT).show();
+                        bottomSheetDialog.dismiss();
+                    }
+                });
+                bottomSheetDialog.setContentView(bottomSheetView);
+                bottomSheetDialog.show();
+
+            }
+        });
 
         modExperto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -306,4 +349,5 @@ public class ThirdFragment extends Fragment {
 
         return view;
     }
+
 }
