@@ -1,6 +1,7 @@
 package com.upiita.mechaponicsapp;
 
 import android.animation.LayoutTransition;
+import android.graphics.Typeface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -18,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.chip.Chip;
 import com.google.android.material.slider.RangeSlider;
 import com.google.android.material.slider.Slider;
 import com.google.android.material.switchmaterial.SwitchMaterial;
@@ -34,18 +36,24 @@ public class ThirdFragment extends Fragment {
     LinearLayout linearConfigSN, layouttvMSN;
     TextView tvMCC;
     LinearLayout linearConfigCC, layouttvMCC;
-    LinearLayout layoutSheet;
+    LinearLayout layoutSheet, layoutSheetDemos;
 
     SwitchMaterial modExperto, modDemos;
 
-    Button EditModo;
+    Button EditModo, btnRunDemos;
 
     Slider sliderSNVar1, sliderSNVar2, sliderCCVar1, sliderCCVar2, sliderCCVar3, sliderCCVar4;
     float valSSNVar1, valSSNVar2, valSCCVar1, valSCCVar2, valSCCVar3, valSCCVar4;
     TextView tvSliderSNVar1, tvSliderSNVar2, tvSliderCCVar1, tvSliderCCVar2, tvSliderCCVar3, tvSliderCCVar4;
 
+    TextView tvModDOp1, tvModDOp2, tvModDOp3, tvModDOp4, tvModDOp5, tvModDOp6;
+    boolean boolModOp1, boolModOp2, boolModOp3, boolModOp4, boolModOp5, boolModOp6;
+    Chip chipModOp1, chipModOp2, chipModOp3, chipModOp4, chipModOp5, chipModOp6;
+
     // Ruta principal del proyecto de la base de datos al apartado de Usuario
     String pathProyecto = "MechaponicsSystem/Perfil";
+    // Ruta principal del proyecto de la base de datos al apartado del estado del sistema
+    String pathEstadoDemos = "MechaponicsSystem/Estado";
 
     // Objeto de Firebase para obtener la referencia de obtención de datos de la base de datos
     FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -65,7 +73,9 @@ public class ThirdFragment extends Fragment {
         linearConfigCC = view.findViewById(R.id.linearConfigCC);
         layouttvMCC = view.findViewById(R.id.layouttvMCC);
         layoutSheet = view.findViewById(R.id.bottomSheetContainerMod);
+        layoutSheetDemos = view.findViewById(R.id.bottomSheetContainerMod);
         EditModo = view.findViewById(R.id.btnEditModo);
+        btnRunDemos = view.findViewById(R.id.btnRunDemos);
         modExperto = view.findViewById(R.id.swChangeMod);
         modDemos = view.findViewById(R.id.swChangeDemos);
 
@@ -75,6 +85,13 @@ public class ThirdFragment extends Fragment {
         sliderCCVar2 = view.findViewById(R.id.sliderCCVar2);
         sliderCCVar3 = view.findViewById(R.id.sliderCCVar3);
         sliderCCVar4 = view.findViewById(R.id.sliderCCVar4);
+
+        chipModOp1 = view.findViewById(R.id.chip1);
+        chipModOp2 = view.findViewById(R.id.chip2);
+        chipModOp3 = view.findViewById(R.id.chip3);
+        chipModOp4 = view.findViewById(R.id.chip4);
+        chipModOp5 = view.findViewById(R.id.chip5);
+        chipModOp6 = view.findViewById(R.id.chip6);
 
         DatabaseReference mDatabase = database.getReference(pathProyecto);
 
@@ -194,6 +211,77 @@ public class ThirdFragment extends Fragment {
                         mDatabase.child("Lum").setValue(valSCCVar3);
                         mDatabase.child("Rie").setValue(valSCCVar4);
                         Toast.makeText(getActivity(), "Cambios guardados", Toast.LENGTH_SHORT).show();
+                        bottomSheetDialog.dismiss();
+                    }
+                });
+                bottomSheetDialog.setContentView(bottomSheetView);
+                bottomSheetDialog.show();
+            }
+        });
+
+        btnRunDemos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolModOp1 = chipModOp1.isChecked();
+                boolModOp2 = chipModOp2.isChecked();
+                boolModOp3 = chipModOp3.isChecked();
+                boolModOp4 = chipModOp4.isChecked();
+                boolModOp5 = chipModOp5.isChecked();
+                boolModOp6 = chipModOp6.isChecked();
+
+                DatabaseReference mDatabaseDemos = database.getReference(pathEstadoDemos);
+                mDatabaseDemos.child("Modo").setValue("D");
+
+                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
+                        getActivity(), R.style.BottomSheetDialogTheme);
+                //bottomSheetDialog.setContentView(R.layout.layout_bottom_sheet);
+                View bottomSheetView = LayoutInflater.from(getActivity().getApplicationContext())
+                        .inflate(
+                                R.layout.layout_bs_mododemostrativo, layoutSheetDemos);
+                tvModDOp1 = bottomSheetView.findViewById(R.id.tvModDOp1);
+                tvModDOp2 = bottomSheetView.findViewById(R.id.tvModDOp2);
+                tvModDOp3 = bottomSheetView.findViewById(R.id.tvModDOp3);
+                tvModDOp4 = bottomSheetView.findViewById(R.id.tvModDOp4);
+                tvModDOp5 = bottomSheetView.findViewById(R.id.tvModDOp5);
+                tvModDOp6 = bottomSheetView.findViewById(R.id.tvModDOp6);
+
+                if (boolModOp1) {
+                    tvModDOp1.setTypeface(null, Typeface.BOLD);
+                }else{
+                    tvModDOp1.setTypeface(null, Typeface.NORMAL);
+                }
+                if (boolModOp2){
+                    tvModDOp2.setTypeface(null, Typeface.BOLD);
+                }else{
+                    tvModDOp2.setTypeface(null, Typeface.NORMAL);
+                }
+                if (boolModOp3){
+                    tvModDOp3.setTypeface(null, Typeface.BOLD);
+                }else{
+                    tvModDOp3.setTypeface(null, Typeface.NORMAL);
+                }
+                if (boolModOp4){
+                    tvModDOp4.setTypeface(null, Typeface.BOLD);
+                }else{
+                    tvModDOp4.setTypeface(null, Typeface.NORMAL);
+                }
+                if (boolModOp5){
+                    tvModDOp5.setTypeface(null, Typeface.BOLD);
+                }else{
+                    tvModDOp5.setTypeface(null, Typeface.NORMAL);
+                }
+                if (boolModOp6){
+                    tvModDOp6.setTypeface(null, Typeface.BOLD);
+                }else{
+                    tvModDOp6.setTypeface(null, Typeface.NORMAL);
+                }
+
+                bottomSheetView.findViewById(R.id.btnModDemosDesac).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        DatabaseReference mDatabaseDemos = database.getReference(pathEstadoDemos);
+                        mDatabaseDemos.child("Modo").setValue("A");
+                        Toast.makeText(getActivity(), "Prueba finalizada, regresando a modo automático", Toast.LENGTH_SHORT).show();
                         bottomSheetDialog.dismiss();
                     }
                 });

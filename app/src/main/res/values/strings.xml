@@ -204,4 +204,10 @@
     <string name="f3_texto_chip6">Mediciones</string>
     // Texto botón de ejecutar prueba demostrativo
     <string name="f3_texto_btn_demos">Ejecutar prueba</string>
+
+    // Texto bottom sheet de modo demostrativo
+    // Texto del titulo del bottom sheet
+    <string name="f3_texto_bsDemos">Modo demostrativo</string>
+    // Texto del boton del modo demostrativo bottom sheet
+    <string name="f3_texto_btnDemos">Cancelar</string>
 </resources>
