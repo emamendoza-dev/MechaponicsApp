@@ -50,7 +50,7 @@
     // Nombre primer fragmento
     <string name="bn_firstFragment">Home</string>
     // Nombre segundo fragmento
-    <string name="bn_secondFragment">Modos</string>
+    <string name="bn_secondFragment">Estadísticas</string>
     // Nombre tercero fragmento
     <string name="bn_thirdFragment">Configuración</string>
     // Nombre cuarto fragmento
