@@ -152,7 +152,6 @@ tools:context=".ThirdFragment">
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="6dp"
                     android:layout_marginRight="6dp"
-                    android:drawableEnd="@drawable/cn_ic_addnodo"
                     android:drawableTint="#fff"
                     android:fontFamily="@font/poppins_medium"
                     android:text="@string/f3_texto_btn_agregar"

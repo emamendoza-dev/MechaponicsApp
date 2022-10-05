@@ -2,6 +2,7 @@ package com.upiita.mechaponicsapp;
 
 import android.animation.LayoutTransition;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 
@@ -18,6 +19,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,10 +56,19 @@ public class ThirdFragment extends Fragment {
     boolean boolModOp1, boolModOp2, boolModOp3, boolModOp4, boolModOp5, boolModOp6;
     Chip chipModOp1, chipModOp2, chipModOp3, chipModOp4, chipModOp5, chipModOp6;
 
+    RadioGroup rbNodos;
+    RadioButton rbNodo1, rbNodo2, rbNodo3, rbNodo4;
+    String selnodo;
+    TextView tvCNodo1, tvCNodo2, tvCNodo3, tvCNodo4;
+
     // Ruta principal del proyecto de la base de datos al apartado de Usuario
     String pathProyecto = "MechaponicsSystem/Perfil";
     // Ruta principal del proyecto de la base de datos al apartado del estado del sistema
     String pathEstadoDemos = "MechaponicsSystem/Estado";
+    // Ruta principal del proyecto de la base de datos al apartado de nodos
+    String pathEstadoNodos = "MechaponicsSystem/Nodos";
+
+    String estadoN1, estadoN2, estadoN3, estadoN4;
 
     // Objeto de Firebase para obtener la referencia de obtención de datos de la base de datos
     FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -97,7 +110,14 @@ public class ThirdFragment extends Fragment {
         chipModOp5 = view.findViewById(R.id.chip5);
         chipModOp6 = view.findViewById(R.id.chip6);
 
+        tvCNodo1 = view.findViewById(R.id.tvCNodo1);
+        tvCNodo2 = view.findViewById(R.id.tvCNodo2);
+        tvCNodo3 = view.findViewById(R.id.tvCNodo3);
+        tvCNodo4 = view.findViewById(R.id.tvCNodo4);
+
         DatabaseReference mDatabase = database.getReference(pathProyecto);
+
+        DatabaseReference mDatabaseN = database.getReference(pathEstadoNodos);
 
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
@@ -122,6 +142,41 @@ public class ThirdFragment extends Fragment {
             }
         });
 
+        mDatabaseN.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                estadoN1 = snapshot.child("N1").getValue().toString();
+                if (Integer.parseInt(estadoN1) == 0){
+                    tvCNodo1.setTextColor(Color.parseColor("#ff6659"));
+                }else{
+                    tvCNodo1.setTextColor(Color.parseColor("#00838f"));
+                }
+                estadoN2 = snapshot.child("N2").getValue().toString();
+                if (Integer.parseInt(estadoN2) == 0){
+                    tvCNodo2.setTextColor(Color.parseColor("#ff6659"));
+                }else{
+                    tvCNodo2.setTextColor(Color.parseColor("#00838f"));
+                }
+                estadoN3 = snapshot.child("N3").getValue().toString();
+                if (Integer.parseInt(estadoN3) == 0){
+                    tvCNodo3.setTextColor(Color.parseColor("#ff6659"));
+                }else{
+                    tvCNodo3.setTextColor(Color.parseColor("#00838f"));
+                }
+                estadoN4 = snapshot.child("N4").getValue().toString();
+                if (Integer.parseInt(estadoN4) == 0){
+                    tvCNodo4.setTextColor(Color.parseColor("#ff6659"));
+                }else{
+                    tvCNodo4.setTextColor(Color.parseColor("#00838f"));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         linearConfigMod.getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
         linearConfigSN.getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
         linearConfigCC.getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
@@ -135,19 +190,69 @@ public class ThirdFragment extends Fragment {
                 View bottomSheetView = LayoutInflater.from(getActivity().getApplicationContext())
                         .inflate(
                                 R.layout.layout_bs_confignodos, layoutSheetNodos);
+                rbNodos = bottomSheetView.findViewById(R.id.rbNodos);
+                rbNodo1 = bottomSheetView.findViewById(R.id.rbNodo1);
+                rbNodo2 = bottomSheetView.findViewById(R.id.rbNodo2);
+                rbNodo3 = bottomSheetView.findViewById(R.id.rbNodo3);
+                rbNodo4 = bottomSheetView.findViewById(R.id.rbNodo4);
+
+                rbNodo1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        selnodo = "1";
+                        Toast.makeText(getActivity(), "Nodo 1 seleccionado", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                rbNodo2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        selnodo = "2";
+                        Toast.makeText(getActivity(), "Nodo 2 seleccionado", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                rbNodo3.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        selnodo = "3";
+                        Toast.makeText(getActivity(), "Nodo 3 seleccionado", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                rbNodo4.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        selnodo = "4";
+                        Toast.makeText(getActivity(), "Nodo 4 seleccionado", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
 
                 bottomSheetView.findViewById(R.id.btnAddNodo).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
-                        Toast.makeText(getActivity(), "Nodo Agregado", Toast.LENGTH_SHORT).show();
+                        if (selnodo == "1"){
+                            tvCNodo1.setTextColor(Color.parseColor("#00838f"));
+                            mDatabaseN.child("N1").setValue(1);
+                        }else if (selnodo == "2"){
+                            tvCNodo2.setTextColor(Color.parseColor("#00838f"));
+                            mDatabaseN.child("N2").setValue(1);
+                        }else if (selnodo == "3"){
+                            tvCNodo3.setTextColor(Color.parseColor("#00838f"));
+                            mDatabaseN.child("N3").setValue(1);
+                        }else if (selnodo == "4"){
+                            tvCNodo4.setTextColor(Color.parseColor("#00838f"));
+                            mDatabaseN.child("N4").setValue(1);
+                        }
+                        Toast.makeText(getActivity(), "Nodo "+selnodo+" agregado", Toast.LENGTH_SHORT).show();
                         bottomSheetDialog.dismiss();
                     }
                 });
                 bottomSheetView.findViewById(R.id.btnConfigNodo).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(getActivity(), "Abriendo configuración del nodo", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Abriendo configuración del nodo "+selnodo, Toast.LENGTH_SHORT).show();
                         bottomSheetDialog.dismiss();
                         Intent i = new Intent(getActivity(), NodoWifiActivity.class);
                         startActivity(i);
@@ -156,8 +261,21 @@ public class ThirdFragment extends Fragment {
                 bottomSheetView.findViewById(R.id.btnDeleNodo).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        if (selnodo == "1"){
+                            tvCNodo1.setTextColor(Color.parseColor("#ff6659"));
+                            mDatabaseN.child("N1").setValue(0);
+                        }else if (selnodo == "2"){
+                            tvCNodo2.setTextColor(Color.parseColor("#ff6659"));
+                            mDatabaseN.child("N2").setValue(0);
+                        }else if (selnodo == "3"){
+                            tvCNodo3.setTextColor(Color.parseColor("#ff6659"));
+                            mDatabaseN.child("N3").setValue(0);
+                        }else if (selnodo == "4"){
+                            tvCNodo4.setTextColor(Color.parseColor("#ff6659"));
+                            mDatabaseN.child("N4").setValue(0);
+                        }
 
-                        Toast.makeText(getActivity(), "Nodo Eliminado", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Nodo "+selnodo+" eliminado", Toast.LENGTH_SHORT).show();
                         bottomSheetDialog.dismiss();
                     }
                 });

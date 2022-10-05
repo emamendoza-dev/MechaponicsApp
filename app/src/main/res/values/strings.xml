@@ -147,7 +147,7 @@
     // Texto de Nodo 4
     <string name="f3_texto_nomNodo4">Sin nodo de cultivo 3</string>
     // Texto boton agregar nodo
-    <string name="f3_texto_btn_agregar">Agregar</string>
+    <string name="f3_texto_btn_agregar">Configurar</string>
     // Texto de CardView de modos de operación sistema
     <string name="f3_texto_nomCardModos">Configuración del sistema</string>
     // Texto del switch de cambio de mod
@@ -230,5 +230,15 @@
     <string name="f3_texto_cinfignodo_ok">Activar</string>
     // Texto de boton de nodo configurado
     <string name="f3_texto_btn_nodoListo">Regresar</string>
+    // Texto para agregar nodos
+    <string name="f3_texto_agregarnodos">Selecciona el nodo que vas a configurar</string>
+    // Texto de selección nodo 1
+    <string name="f3_texto_rbtnNodo1">Nodo 1</string>
+    // Texto de selección nodo 2
+    <string name="f3_texto_rbtnNodo2">Nodo 2</string>
+    // Texto de selección nodo 3
+    <string name="f3_texto_rbtnNodo3">Nodo 3</string>
+    // Texto de selección nodo 4
+    <string name="f3_texto_rbtnNodo4">Nodo 4</string>
 
 </resources>
