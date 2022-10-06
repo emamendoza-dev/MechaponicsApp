@@ -237,12 +237,18 @@ public class ThirdFragment extends Fragment {
                             mDatabaseN.child("N1").setValue(1);
                         }else if (selnodo == "2"){
                             tvCNodo2.setTextColor(Color.parseColor("#00838f"));
+                            mDatabaseN.child("N1").setValue(1);
                             mDatabaseN.child("N2").setValue(1);
                         }else if (selnodo == "3"){
                             tvCNodo3.setTextColor(Color.parseColor("#00838f"));
+                            mDatabaseN.child("N1").setValue(1);
+                            mDatabaseN.child("N2").setValue(1);
                             mDatabaseN.child("N3").setValue(1);
                         }else if (selnodo == "4"){
                             tvCNodo4.setTextColor(Color.parseColor("#00838f"));
+                            mDatabaseN.child("N1").setValue(1);
+                            mDatabaseN.child("N2").setValue(1);
+                            mDatabaseN.child("N3").setValue(1);
                             mDatabaseN.child("N4").setValue(1);
                         }
                         Toast.makeText(getActivity(), "Nodo "+selnodo+" agregado", Toast.LENGTH_SHORT).show();
@@ -266,17 +272,22 @@ public class ThirdFragment extends Fragment {
                         if (selnodo == "1"){
                             tvCNodo1.setTextColor(Color.parseColor("#ff6659"));
                             mDatabaseN.child("N1").setValue(0);
+                            mDatabaseN.child("N2").setValue(0);
+                            mDatabaseN.child("N3").setValue(0);
+                            mDatabaseN.child("N4").setValue(0);
                         }else if (selnodo == "2"){
                             tvCNodo2.setTextColor(Color.parseColor("#ff6659"));
                             mDatabaseN.child("N2").setValue(0);
+                            mDatabaseN.child("N3").setValue(0);
+                            mDatabaseN.child("N4").setValue(0);
                         }else if (selnodo == "3"){
                             tvCNodo3.setTextColor(Color.parseColor("#ff6659"));
                             mDatabaseN.child("N3").setValue(0);
+                            mDatabaseN.child("N4").setValue(0);
                         }else if (selnodo == "4"){
                             tvCNodo4.setTextColor(Color.parseColor("#ff6659"));
                             mDatabaseN.child("N4").setValue(0);
                         }
-
                         Toast.makeText(getActivity(), "Nodo "+selnodo+" eliminado", Toast.LENGTH_SHORT).show();
                         bottomSheetDialog.dismiss();
                     }

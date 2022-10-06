@@ -71,99 +71,106 @@ public class FirstFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 estadoN1 = snapshot.child("N1").getValue().toString();
-                if (Integer.parseInt(estadoN1) != 0){
+                estadoN2 = snapshot.child("N2").getValue().toString();
+                estadoN3 = snapshot.child("N3").getValue().toString();
+                estadoN4 = snapshot.child("N4").getValue().toString();
+
+                if(Integer.parseInt(estadoN4) != 0){
+                    nodos=4;
+                }else if(Integer.parseInt(estadoN3) != 0){
+                    nodos=3;
+                }else if(Integer.parseInt(estadoN2) != 0){
+                    nodos=2;
+                }else if(Integer.parseInt(estadoN1) != 0){
                     nodos=1;
                 }else{
                     nodos=0;
                 }
-                estadoN2 = snapshot.child("N2").getValue().toString();
-                if (Integer.parseInt(estadoN2) != 0){
-                    nodos=2;
-                }
-                estadoN3 = snapshot.child("N3").getValue().toString();
-                if (Integer.parseInt(estadoN3) != 0){
-                    nodos=3;
-                }
-                estadoN4 = snapshot.child("N4").getValue().toString();
-                if (Integer.parseInt(estadoN4) != 0){
-                    nodos=4;
-                }
-                if (nodos == 0){
-                    tvFirstFragment.setText("No hay ningún nodo configurado");
-                }else{
-                    tvFirstFragment.setText("Selecciona un sistema para más detalles");
-                }
                 // Recycler View de la interfaz
                 recyclerViewH = view.findViewById(R.id.recyclerView);
                 elements = new ArrayList<>();
-                // Creación de los CardViews de los nodos
-                for (int i=0; i<nodos; i++){
-                    // Número del nodo
-                    int valnodo = i+1;
-                    // Creación de la ruta del nodo
-                    String numnodo = Integer.toString(valnodo);
-                    String pathNodo = "Nodo" + numnodo;
-                    // Referencia completa de ese nodo de la base de datos
-                    DatabaseReference referenceNodo = database.getReference(pathProyecto+pathNodo);
-                    // Creación del CardView del nodo
-                    referenceNodo.addValueEventListener(new ValueEventListener() {
+                if (nodos == 0){
+                    tvFirstFragment.setText("No hay ningún nodo configurado");
+                    elements.clear();
+                    recyclerViewH.setAdapter(new ListAdapter(globalContext, elements, new ListAdapter.OnItemClickListener() {
+                        // Función para mover los datos del CardView a una ventana nueva
                         @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            // Obtención de los valores de la base de datos
-                            valor1 = snapshot.child("Variable1").getValue().toString();
-                            valor2 = snapshot.child("Variable2").getValue().toString();
-                            valor3 = snapshot.child("Variable3").getValue().toString();
-                            valor4 = snapshot.child("Variable4").getValue().toString();
-                            valor5 = snapshot.child("Variable5").getValue().toString();
-                            valor6 = snapshot.child("Variable6").getValue().toString();
-                            valor7 = snapshot.child("Variable7").getValue().toString();
-                            valor8 = snapshot.child("Variable8").getValue().toString();
-                            // Elminación de CardViews del mismo nodo o creación del CardView si no existe
-                            if(elements.size() == 2){
-                                // Creación del CardView del nodo
-                                if (valnodo == 1){
-                                    // Mismo CardView del nodo
-                                    // Eliminación del CardView desactualizado
-                                    elements.remove(valnodo-1);
-                                    elements.add(0, new ListElement(R.drawable.cv_ic_sn ,pathNodo, "pH 1: "+valor1,
-                                            "CE: "+valor2,"Temperatura SN: "+valor3,
-                                            "Nivel 1: "+valor4,"Nivel 2: "+valor5,
-                                            "Nivel 3: "+valor6,"Nivel 4: "+valor7,
-                                            "Nivel 5: "+valor8,"Estado OK"));
-                                }else{
-                                    // Mismo CardView del nodo
-                                    // Eliminación del CardView desactualizado
-                                    elements.remove(valnodo-1);
-                                    elements.add(valnodo-1, new ListElement(R.drawable.cv_ic_crop ,pathNodo, "Temperatura: "+valor1,
-                                            "Humedad relativa: "+valor2,"Luminosidad: "+valor3,
-                                            "Variable 4: "+valor4,"Variable 5: "+valor5,
-                                            "Variable 6: "+valor6,"Variable 7: "+valor7,
-                                            "Variable 8: "+valor8,"Estado OK"));
-                                }
-                            }else{
-                                if (valnodo == 1){
-                                    elements.add(valnodo-1, new ListElement(R.drawable.cv_ic_sn ,pathNodo, "pH 1: "+valor1,
-                                            "CE: "+valor2,"Temperatura SN: "+valor3,
-                                            "Nivel 1: "+valor4,"Nivel 2: "+valor5,
-                                            "Nivel 3: "+valor6,"Nivel 4: "+valor7,
-                                            "Nivel 5: "+valor8,"Estado OK"));
-                                }else{
-                                    elements.add(valnodo-1, new ListElement(R.drawable.cv_ic_crop ,pathNodo, "Temperatura: "+valor1,
-                                            "Humedad relativa: "+valor2,"Luminosidad: "+valor3,
-                                            "Variable 4: "+valor4,"Variable 5: "+valor5,
-                                            "Variable 6: "+valor6,"Variable 7: "+valor7,
-                                            "Variable 8: "+valor8,"Estado OK"));
-                                }
-                            }
-                            init();
-                        }
-                        // Función para cancelar
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
+                        public void onItemClick(ListElement item) {
 
                         }
-                    });
+                    }));
+                }else{
+                    tvFirstFragment.setText("Selecciona un sistema para más detalles");
+                    // Creación de los CardViews de los nodos
+                    for (int i=0; i<nodos; i++){
+                        // Número del nodo
+                        int valnodo = i+1;
+                        // Creación de la ruta del nodo
+                        String numnodo = Integer.toString(valnodo);
+                        String pathNodo = "Nodo" + numnodo;
+                        // Referencia completa de ese nodo de la base de datos
+                        DatabaseReference referenceNodo = database.getReference(pathProyecto+pathNodo);
+                        // Creación del CardView del nodo
+                        referenceNodo.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                // Obtención de los valores de la base de datos
+                                valor1 = snapshot.child("Variable1").getValue().toString();
+                                valor2 = snapshot.child("Variable2").getValue().toString();
+                                valor3 = snapshot.child("Variable3").getValue().toString();
+                                valor4 = snapshot.child("Variable4").getValue().toString();
+                                valor5 = snapshot.child("Variable5").getValue().toString();
+                                valor6 = snapshot.child("Variable6").getValue().toString();
+                                valor7 = snapshot.child("Variable7").getValue().toString();
+                                valor8 = snapshot.child("Variable8").getValue().toString();
+                                // Elminación de CardViews del mismo nodo o creación del CardView si no existe
+                                if(elements.size() == nodos){
+                                    // Creación del CardView del nodo
+                                    if (valnodo == 1){
+                                        // Mismo CardView del nodo
+                                        // Eliminación del CardView desactualizado
+                                        elements.remove(valnodo-1);
+                                        elements.add(0, new ListElement(R.drawable.ima_sn , "Solución nutritiva", "pH 1: "+valor1,
+                                                "CE: "+valor2,"Temperatura SN: "+valor3,
+                                                "Nivel 1: "+valor4,"Nivel 2: "+valor5,
+                                                "Nivel 3: "+valor6,"Nivel 4: "+valor7,
+                                                "Nivel 5: "+valor8,"Activo"));
+                                    }else{
+                                        // Mismo CardView del nodo
+                                        // Eliminación del CardView desactualizado
+                                        elements.remove(valnodo-1);
+                                        elements.add(valnodo-1, new ListElement(R.drawable.ima_lettuce ,"Celda de cultivo "+(valnodo-1), "Temperatura: "+valor1,
+                                                "Humedad relativa: "+valor2,"Luminosidad: "+valor3,
+                                                "Variable 4: "+valor4,"Variable 5: "+valor5,
+                                                "Variable 6: "+valor6,"Variable 7: "+valor7,
+                                                "","Activo"));
+                                    }
+                                }else{
+                                    if (valnodo == 1){
+                                        elements.add(valnodo-1, new ListElement(R.drawable.ima_sn , "Solución nutritiva", "pH 1: "+valor1,
+                                                "CE: "+valor2,"Temperatura SN: "+valor3,
+                                                "Nivel 1: "+valor4,"Nivel 2: "+valor5,
+                                                "Nivel 3: "+valor6,"Nivel 4: "+valor7,
+                                                "Nivel 5: "+valor8,"Activo"));
+                                    }else{
+                                        elements.add(valnodo-1, new ListElement(R.drawable.ima_lettuce ,"Celda de cultivo "+(valnodo-1), "Temperatura: "+valor1,
+                                                "Humedad relativa: "+valor2,"Luminosidad: "+valor3,
+                                                "Riego: "+valor4,"",
+                                                "","",
+                                                "","Activo"));
+                                    }
+                                }
+                                init();
+                            }
+                            // Función para cancelar
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+                    }
                 }
+
             }
 
             @Override
