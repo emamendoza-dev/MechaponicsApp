@@ -247,6 +247,7 @@ public class ThirdFragment extends Fragment {
                         }
                         Toast.makeText(getActivity(), "Nodo "+selnodo+" agregado", Toast.LENGTH_SHORT).show();
                         bottomSheetDialog.dismiss();
+                        //getActivity().onBackPressed();
                     }
                 });
                 bottomSheetView.findViewById(R.id.btnConfigNodo).setOnClickListener(new View.OnClickListener() {
@@ -256,6 +257,7 @@ public class ThirdFragment extends Fragment {
                         bottomSheetDialog.dismiss();
                         Intent i = new Intent(getActivity(), NodoWifiActivity.class);
                         startActivity(i);
+                        //getActivity().onBackPressed();
                     }
                 });
                 bottomSheetView.findViewById(R.id.btnDeleNodo).setOnClickListener(new View.OnClickListener() {
