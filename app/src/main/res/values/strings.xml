@@ -139,7 +139,7 @@
     // Texto de CardView de información de usuario
     <string name="f3_texto_nomCardNodos">Nodos del sistema</string>
     // Texto de Nodo 1
-    <string name="f3_texto_nomNodo1">Sin nodo SN</string>
+    <string name="f3_texto_nomNodo1">Sin nodo de solución</string>
     // Texto de Nodo 2
     <string name="f3_texto_nomNodo2">Sin nodo de cultivo 1</string>
     // Texto de Nodo 3

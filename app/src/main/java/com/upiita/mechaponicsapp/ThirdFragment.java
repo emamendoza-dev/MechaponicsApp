@@ -147,26 +147,34 @@ public class ThirdFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 estadoN1 = snapshot.child("N1").getValue().toString();
                 if (Integer.parseInt(estadoN1) == 0){
+                    tvCNodo1.setText("Sin nodo de solución");
                     tvCNodo1.setTextColor(Color.parseColor("#ff6659"));
                 }else{
+                    tvCNodo1.setText("Nodo de solución");
                     tvCNodo1.setTextColor(Color.parseColor("#00838f"));
                 }
                 estadoN2 = snapshot.child("N2").getValue().toString();
                 if (Integer.parseInt(estadoN2) == 0){
+                    tvCNodo2.setText("Sin nodo de cultivo 1");
                     tvCNodo2.setTextColor(Color.parseColor("#ff6659"));
                 }else{
+                    tvCNodo2.setText("Nodo de cultivo 1");
                     tvCNodo2.setTextColor(Color.parseColor("#00838f"));
                 }
                 estadoN3 = snapshot.child("N3").getValue().toString();
                 if (Integer.parseInt(estadoN3) == 0){
+                    tvCNodo3.setText("Sin nodo de cultivo 2");
                     tvCNodo3.setTextColor(Color.parseColor("#ff6659"));
                 }else{
+                    tvCNodo3.setText("Nodo de cultivo 2");
                     tvCNodo3.setTextColor(Color.parseColor("#00838f"));
                 }
                 estadoN4 = snapshot.child("N4").getValue().toString();
                 if (Integer.parseInt(estadoN4) == 0){
+                    tvCNodo4.setText("Sin nodo de cultivo 3");
                     tvCNodo4.setTextColor(Color.parseColor("#ff6659"));
                 }else{
+                    tvCNodo4.setText("Nodo de cultivo 3");
                     tvCNodo4.setTextColor(Color.parseColor("#00838f"));
                 }
             }
@@ -270,25 +278,34 @@ public class ThirdFragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         if (selnodo == "1"){
-                            tvCNodo1.setTextColor(Color.parseColor("#ff6659"));
-                            mDatabaseN.child("N1").setValue(0);
-                            mDatabaseN.child("N2").setValue(0);
-                            mDatabaseN.child("N3").setValue(0);
-                            mDatabaseN.child("N4").setValue(0);
+                            if (tvCNodo4.getText() == "Nodo de cultivo 3" || tvCNodo3.getText() == "Nodo de cultivo 2" || tvCNodo2.getText() == "Nodo de cultivo 1"){
+                                Toast.makeText(getActivity(), "Es necesario eliminar el nodo final", Toast.LENGTH_SHORT).show();
+                            }else{
+                                tvCNodo1.setTextColor(Color.parseColor("#ff6659"));
+                                mDatabaseN.child("N1").setValue(0);
+                                Toast.makeText(getActivity(), "Nodo "+selnodo+" eliminado", Toast.LENGTH_SHORT).show();
+                            }
                         }else if (selnodo == "2"){
-                            tvCNodo2.setTextColor(Color.parseColor("#ff6659"));
-                            mDatabaseN.child("N2").setValue(0);
-                            mDatabaseN.child("N3").setValue(0);
-                            mDatabaseN.child("N4").setValue(0);
+                            if (tvCNodo4.getText() == "Nodo de cultivo 3" || tvCNodo3.getText() == "Nodo de cultivo 2"){
+                                Toast.makeText(getActivity(), "Es necesario eliminar el nodo final", Toast.LENGTH_SHORT).show();
+                            }else{
+                                tvCNodo2.setTextColor(Color.parseColor("#ff6659"));
+                                mDatabaseN.child("N2").setValue(0);
+                                Toast.makeText(getActivity(), "Nodo "+selnodo+" eliminado", Toast.LENGTH_SHORT).show();
+                            }
                         }else if (selnodo == "3"){
-                            tvCNodo3.setTextColor(Color.parseColor("#ff6659"));
-                            mDatabaseN.child("N3").setValue(0);
-                            mDatabaseN.child("N4").setValue(0);
+                            if (tvCNodo4.getText() == "Nodo de cultivo 3"){
+                                Toast.makeText(getActivity(), "Es necesario eliminar el nodo final", Toast.LENGTH_SHORT).show();
+                            }else{
+                                tvCNodo3.setTextColor(Color.parseColor("#ff6659"));
+                                mDatabaseN.child("N3").setValue(0);
+                                Toast.makeText(getActivity(), "Nodo "+selnodo+" eliminado", Toast.LENGTH_SHORT).show();
+                            }
                         }else if (selnodo == "4"){
                             tvCNodo4.setTextColor(Color.parseColor("#ff6659"));
                             mDatabaseN.child("N4").setValue(0);
                         }
-                        Toast.makeText(getActivity(), "Nodo "+selnodo+" eliminado", Toast.LENGTH_SHORT).show();
+
                         bottomSheetDialog.dismiss();
                     }
                 });
@@ -308,12 +325,12 @@ public class ThirdFragment extends Fragment {
 
                 if (modExperto.isChecked()){
                     DatabaseReference mDatabase = database.getReference(pathProyecto);
-                    mDatabase.child("pH").setValue(5.9f);
-                    mDatabase.child("CE").setValue(5.8f);
-                    mDatabase.child("Temp").setValue(5.7f);
-                    mDatabase.child("Hum").setValue(5.6f);
-                    mDatabase.child("Lum").setValue(5.5f);
-                    mDatabase.child("Rie").setValue(5.4f);
+                    mDatabase.child("pH").setValue(6.0f);
+                    mDatabase.child("CE").setValue(1.0f);
+                    mDatabase.child("Temp").setValue(17.0f);
+                    mDatabase.child("Hum").setValue(70);
+                    mDatabase.child("Lum").setValue(50);
+                    mDatabase.child("Rie").setValue(5);
                 }
             }
         });

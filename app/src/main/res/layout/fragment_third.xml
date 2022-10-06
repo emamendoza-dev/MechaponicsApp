@@ -94,7 +94,7 @@ tools:context=".ThirdFragment">
                         android:fontFamily="@font/poppins_regular"
                         android:text="@string/f3_texto_nomNodo1"
                         android:textColor="@color/f3_color_text_nodooff"
-                        android:textSize="13sp"
+                        android:textSize="11sp"
                         android:textStyle="bold" />
 
                     <!-- Campo 2 del CardView -->
@@ -108,7 +108,7 @@ tools:context=".ThirdFragment">
                         android:fontFamily="@font/poppins_regular"
                         android:text="@string/f3_texto_nomNodo2"
                         android:textColor="@color/f3_color_text_nodooff"
-                        android:textSize="13sp"
+                        android:textSize="11sp"
                         android:textStyle="bold" />
 
                     <!-- Campo 3 del CardView -->
@@ -122,7 +122,7 @@ tools:context=".ThirdFragment">
                         android:fontFamily="@font/poppins_regular"
                         android:text="@string/f3_texto_nomNodo3"
                         android:textColor="@color/f3_color_text_nodooff"
-                        android:textSize="13sp"
+                        android:textSize="11sp"
                         android:textStyle="bold" />
 
                     <!-- Campo 4 del CardView -->
@@ -136,7 +136,7 @@ tools:context=".ThirdFragment">
                         android:fontFamily="@font/poppins_regular"
                         android:text="@string/f3_texto_nomNodo4"
                         android:textColor="@color/f3_color_text_nodooff"
-                        android:textSize="13sp"
+                        android:textSize="11sp"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -145,7 +145,7 @@ tools:context=".ThirdFragment">
 
                 <Button
                     android:id="@+id/btnAgregarNodo"
-                    android:layout_width="130dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
@@ -282,7 +282,8 @@ tools:context=".ThirdFragment">
                                 android:id="@+id/tvMSN"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="15dp"
                                 android:fontFamily="@font/poppins_regular"
                                 android:text="@string/f3_texto_modSN"
                                 android:textColor="@color/f3_color_text_nodoon"
@@ -317,8 +318,8 @@ tools:context=".ThirdFragment">
                                     android:id="@+id/sliderSNVar1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:valueFrom="5.0"
-                                    android:valueTo="6.0"
+                                    android:valueFrom="5.5"
+                                    android:valueTo="6.5"
                                     android:stepSize="0.1" />
 
                                 <!-- Texto de variable 2 de la SN -->
@@ -341,8 +342,8 @@ tools:context=".ThirdFragment">
                                     android:id="@+id/sliderSNVar2"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:valueFrom="5.0"
-                                    android:valueTo="6.0"
+                                    android:valueFrom="0.8"
+                                    android:valueTo="1.2"
                                     android:stepSize="0.1" />
 
                             </LinearLayout>
@@ -362,7 +363,7 @@ tools:context=".ThirdFragment">
                             android:id="@+id/tvMCC"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="10dp"
+                            android:layout_marginBottom="15dp"
                             android:fontFamily="@font/poppins_regular"
                             android:text="@string/f3_texto_modCC"
                             android:textColor="@color/f3_color_text_nodoon"
@@ -397,9 +398,9 @@ tools:context=".ThirdFragment">
                                 android:id="@+id/sliderCCVar1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:valueFrom="5.0"
-                                android:valueTo="6.0"
-                                android:stepSize="0.1" />
+                                android:valueFrom="15.0"
+                                android:valueTo="18.0"
+                                android:stepSize="0.5" />
 
                             <!-- Texto de variable 2 de la CC -->
 
@@ -421,9 +422,9 @@ tools:context=".ThirdFragment">
                                 android:id="@+id/sliderCCVar2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:valueFrom="5.0"
-                                android:valueTo="6.0"
-                                android:stepSize="0.1" />
+                                android:valueFrom="60"
+                                android:valueTo="80"
+                                android:stepSize="5" />
 
                             <!-- Texto de variable 3 de la CC -->
 
@@ -445,9 +446,9 @@ tools:context=".ThirdFragment">
                                 android:id="@+id/sliderCCVar3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:valueFrom="5.0"
-                                android:valueTo="6.0"
-                                android:stepSize="0.1" />
+                                android:valueFrom="30"
+                                android:valueTo="90"
+                                android:stepSize="10" />
 
                             <!-- Texto de variable 4 de la CC -->
 
@@ -469,9 +470,9 @@ tools:context=".ThirdFragment">
                                 android:id="@+id/sliderCCVar4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:valueFrom="5.0"
-                                android:valueTo="6.0"
-                                android:stepSize="0.1" />
+                                android:valueFrom="1"
+                                android:valueTo="5"
+                                android:stepSize="1" />
 
 
 

@@ -88,31 +88,31 @@
 
                         <TextView
                             android:id="@+id/tvInfoName"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="3dp"
                             android:text="@string/f4_texto_nameUs"
                             android:textColor="@color/third_color"
-                            android:textSize="13sp"
+                            android:textSize="11sp"
                             android:textStyle="bold" />
 
                         <!-- Campo 2 del CardView -->
 
                         <TextView
                             android:id="@+id/tvInfoEmail"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="20dp"
                             android:text="@string/f4_texto_emailUs"
                             android:textColor="@color/third_color"
-                            android:textSize="13sp"
+                            android:textSize="11sp"
                             android:textStyle="bold" />
 
                         <!-- Botón de logout del CardView -->
 
                         <Button
                             android:id="@+id/btnCerrarS"
-                            android:layout_width="200dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:drawableEnd="@drawable/lo_ic_logout"
                             android:drawableTint="#fff"
@@ -126,7 +126,7 @@
 
                     <Button
                         android:id="@+id/btnEditUs"
-                        android:layout_width="85dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentRight="true"
