@@ -139,11 +139,9 @@ public class FirstFragment extends Fragment {
                                         // Mismo CardView del nodo
                                         // Eliminación del CardView desactualizado
                                         elements.remove(valnodo-1);
-                                        elements.add(valnodo-1, new ListElement(R.drawable.ima_lettuce ,"Celda de cultivo "+(valnodo-1), "Temperatura: "+valor1,
-                                                "Humedad relativa: "+valor2,"Luminosidad: "+valor3,
-                                                "Variable 4: "+valor4,"Variable 5: "+valor5,
-                                                "Variable 6: "+valor6,"Variable 7: "+valor7,
-                                                "","Activo"));
+                                        elements.add(valnodo-1, new ListElement(R.drawable.ima_lettuce ,"Celda de cultivo "+(valnodo-1),
+                                                "Temperatura: "+valor1, "Humedad relativa: "+valor2,"Luminosidad: "+valor3,
+                                                "Riego: "+valor4,"", "","", "","Activo"));
                                     }
                                 }else{
                                     if (valnodo == 1){
@@ -153,11 +151,9 @@ public class FirstFragment extends Fragment {
                                                 "Nivel 3: "+valor6,"Nivel 4: "+valor7,
                                                 "Nivel 5: "+valor8,"Activo"));
                                     }else{
-                                        elements.add(valnodo-1, new ListElement(R.drawable.ima_lettuce ,"Celda de cultivo "+(valnodo-1), "Temperatura: "+valor1,
-                                                "Humedad relativa: "+valor2,"Luminosidad: "+valor3,
-                                                "Riego: "+valor4,"",
-                                                "","",
-                                                "","Activo"));
+                                        elements.add(valnodo-1, new ListElement(R.drawable.ima_lettuce ,"Celda de cultivo "+(valnodo-1),
+                                                "Temperatura: "+valor1, "Humedad relativa: "+valor2,"Luminosidad: "+valor3,
+                                                "Riego: "+valor4,"", "","", "","Activo"));
                                     }
                                 }
                                 init();
