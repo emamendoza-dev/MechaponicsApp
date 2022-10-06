@@ -130,30 +130,30 @@ public class FirstFragment extends Fragment {
                                         // Mismo CardView del nodo
                                         // Eliminación del CardView desactualizado
                                         elements.remove(valnodo-1);
-                                        elements.add(0, new ListElement(R.drawable.ima_sn , "Solución nutritiva", "pH 1: "+valor1,
-                                                "CE: "+valor2,"Temperatura SN: "+valor3,
-                                                "Nivel 1: "+valor4,"Nivel 2: "+valor5,
-                                                "Nivel 3: "+valor6,"Nivel 4: "+valor7,
-                                                "Nivel 5: "+valor8,"Activo"));
+                                        elements.add(0, new ListElement(R.drawable.ima_sn , "Solución nutritiva", "Valor de pH: "+valor1,
+                                                "Valor de conductividad: "+valor2+" mS/cm","Temperatura de la solución: "+valor3+" °C",
+                                                "Nivel de la solución: "+valor4+" %","Nivel del ácido: "+valor5+" %",
+                                                "Nivel de la base: "+valor6+" %","Nivel del agua: "+valor7+" %",
+                                                "Nivel de los nutrientes: "+valor8+" %","Activo"));
                                     }else{
                                         // Mismo CardView del nodo
                                         // Eliminación del CardView desactualizado
                                         elements.remove(valnodo-1);
                                         elements.add(valnodo-1, new ListElement(R.drawable.ima_lettuce ,"Celda de cultivo "+(valnodo-1),
-                                                "Temperatura: "+valor1, "Humedad relativa: "+valor2,"Luminosidad: "+valor3,
-                                                "Riego: "+valor4,"", "","", "","Activo"));
+                                                "Temperatura de la celda: "+valor1+" °C", "Humedad relativa de la celda: "+valor2+" %","Luminosidad: "+valor3+" %",
+                                                "Riegos: "+valor4+" al día","", "","", "","Activo"));
                                     }
                                 }else{
                                     if (valnodo == 1){
-                                        elements.add(valnodo-1, new ListElement(R.drawable.ima_sn , "Solución nutritiva", "pH 1: "+valor1,
-                                                "CE: "+valor2,"Temperatura SN: "+valor3,
-                                                "Nivel 1: "+valor4,"Nivel 2: "+valor5,
-                                                "Nivel 3: "+valor6,"Nivel 4: "+valor7,
-                                                "Nivel 5: "+valor8,"Activo"));
+                                        elements.add(valnodo-1, new ListElement(R.drawable.ima_sn , "Solución nutritiva", "Valor de pH: "+valor1,
+                                                "Valor de conductividad: "+valor2+" mS/cm","Temperatura de la solución: "+valor3+" °C",
+                                                "Nivel de la solución: "+valor4+" %","Nivel del ácido: "+valor5+" %",
+                                                "Nivel de la base: "+valor6+" %","Nivel del agua: "+valor7+" %",
+                                                "Nivel de los nutrientes: "+valor8+" %","Activo"));
                                     }else{
                                         elements.add(valnodo-1, new ListElement(R.drawable.ima_lettuce ,"Celda de cultivo "+(valnodo-1),
-                                                "Temperatura: "+valor1, "Humedad relativa: "+valor2,"Luminosidad: "+valor3,
-                                                "Riego: "+valor4,"", "","", "","Activo"));
+                                                "Temperatura: "+valor1+" °C", "Humedad relativa: "+valor2+" %","Luminosidad: "+valor3+" %",
+                                                "Riegos: "+valor4+" al día","", "","", "","Activo"));
                                     }
                                 }
                                 init();
