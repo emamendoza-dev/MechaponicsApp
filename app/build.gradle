@@ -51,4 +51,5 @@ dependencies {
     implementation 'com.makeramen:roundedimageview:2.3.0'
     implementation 'com.github.Gruzer:simple-gauge-android:0.3.1'
 
+    implementation 'com.github.f0ris.sweetalert:library:1.5.6'
 }

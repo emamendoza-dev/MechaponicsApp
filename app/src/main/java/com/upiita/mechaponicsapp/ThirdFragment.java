@@ -35,6 +35,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+import android.graphics.Color;
+
 public class ThirdFragment extends Fragment {
 
     LinearLayout linearConfigMod, linearCongifCard, linearConfigDemos;
@@ -259,7 +262,11 @@ public class ThirdFragment extends Fragment {
                             mDatabaseN.child("N3").setValue(1);
                             mDatabaseN.child("N4").setValue(1);
                         }
-                        Toast.makeText(getActivity(), "Nodo "+selnodo+" agregado", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getActivity(), "Nodo "+selnodo+" agregado", Toast.LENGTH_SHORT).show();
+                        new SweetAlertDialog(getActivity(), SweetAlertDialog.SUCCESS_TYPE)
+                                .setTitleText("Listo!")
+                                .setContentText("Nodo "+selnodo+" agregado")
+                                .show();
                         bottomSheetDialog.dismiss();
                         //getActivity().onBackPressed();
                     }
@@ -267,7 +274,10 @@ public class ThirdFragment extends Fragment {
                 bottomSheetView.findViewById(R.id.btnConfigNodo).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(getActivity(), "Abriendo configuración del nodo "+selnodo, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getActivity(), "Abriendo configuración del nodo "+selnodo, Toast.LENGTH_SHORT).show();
+                        new SweetAlertDialog(getActivity())
+                                .setTitleText("Abriendo configuración del nodo "+selnodo)
+                                .show();
                         bottomSheetDialog.dismiss();
                         Intent i = new Intent(getActivity(), NodoWifiActivity.class);
                         startActivity(i);
@@ -279,27 +289,51 @@ public class ThirdFragment extends Fragment {
                     public void onClick(View view) {
                         if (selnodo == "1"){
                             if (tvCNodo4.getText() == "Nodo de cultivo 3" || tvCNodo3.getText() == "Nodo de cultivo 2" || tvCNodo2.getText() == "Nodo de cultivo 1"){
-                                Toast.makeText(getActivity(), "Es necesario eliminar el nodo final", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(getActivity(), "Es necesario eliminar el nodo final", Toast.LENGTH_SHORT).show();
+                                new SweetAlertDialog(getActivity(), SweetAlertDialog.ERROR_TYPE)
+                                        .setTitleText("Error!")
+                                        .setContentText("Es necesario eliminar el nodo final")
+                                        .show();
                             }else{
                                 tvCNodo1.setTextColor(Color.parseColor("#ff6659"));
                                 mDatabaseN.child("N1").setValue(0);
-                                Toast.makeText(getActivity(), "Nodo "+selnodo+" eliminado", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(getActivity(), "Nodo "+selnodo+" eliminado", Toast.LENGTH_SHORT).show();
+                                new SweetAlertDialog(getActivity(), SweetAlertDialog.ERROR_TYPE)
+                                        .setTitleText("Eliminado!")
+                                        .setContentText("Nodo "+selnodo+" eliminado")
+                                        .show();
                             }
                         }else if (selnodo == "2"){
                             if (tvCNodo4.getText() == "Nodo de cultivo 3" || tvCNodo3.getText() == "Nodo de cultivo 2"){
-                                Toast.makeText(getActivity(), "Es necesario eliminar el nodo final", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(getActivity(), "Es necesario eliminar el nodo final", Toast.LENGTH_SHORT).show();
+                                new SweetAlertDialog(getActivity(), SweetAlertDialog.ERROR_TYPE)
+                                        .setTitleText("Error!")
+                                        .setContentText("Es necesario eliminar el nodo final")
+                                        .show();
                             }else{
                                 tvCNodo2.setTextColor(Color.parseColor("#ff6659"));
                                 mDatabaseN.child("N2").setValue(0);
-                                Toast.makeText(getActivity(), "Nodo "+selnodo+" eliminado", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(getActivity(), "Nodo "+selnodo+" eliminado", Toast.LENGTH_SHORT).show();
+                                new SweetAlertDialog(getActivity(), SweetAlertDialog.ERROR_TYPE)
+                                        .setTitleText("Eliminado!")
+                                        .setContentText("Nodo "+selnodo+" eliminado")
+                                        .show();
                             }
                         }else if (selnodo == "3"){
                             if (tvCNodo4.getText() == "Nodo de cultivo 3"){
-                                Toast.makeText(getActivity(), "Es necesario eliminar el nodo final", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(getActivity(), "Es necesario eliminar el nodo final", Toast.LENGTH_SHORT).show();
+                                new SweetAlertDialog(getActivity(), SweetAlertDialog.ERROR_TYPE)
+                                        .setTitleText("Error!")
+                                        .setContentText("Es necesario eliminar el nodo final")
+                                        .show();
                             }else{
                                 tvCNodo3.setTextColor(Color.parseColor("#ff6659"));
                                 mDatabaseN.child("N3").setValue(0);
-                                Toast.makeText(getActivity(), "Nodo "+selnodo+" eliminado", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(getActivity(), "Nodo "+selnodo+" eliminado", Toast.LENGTH_SHORT).show();
+                                new SweetAlertDialog(getActivity(), SweetAlertDialog.ERROR_TYPE)
+                                        .setTitleText("Eliminado!")
+                                        .setContentText("Nodo "+selnodo+" eliminado")
+                                        .show();
                             }
                         }else if (selnodo == "4"){
                             tvCNodo4.setTextColor(Color.parseColor("#ff6659"));
@@ -403,7 +437,11 @@ public class ThirdFragment extends Fragment {
                         mDatabase.child("Hum").setValue(valSCCVar2);
                         mDatabase.child("Lum").setValue(valSCCVar3);
                         mDatabase.child("Rie").setValue(valSCCVar4);
-                        Toast.makeText(getActivity(), "Cambios guardados", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getActivity(), "Cambios guardados", Toast.LENGTH_SHORT).show();
+                        new SweetAlertDialog(getActivity(), SweetAlertDialog.SUCCESS_TYPE)
+                                .setTitleText("Listo!")
+                                .setContentText("Cambios guardados")
+                                .show();
                         bottomSheetDialog.dismiss();
                     }
                 });
@@ -488,7 +526,10 @@ public class ThirdFragment extends Fragment {
                         mDatabaseDemos.child("Temperatura").setValue(false);
                         mDatabaseDemos.child("Humedad").setValue(false);
                         mDatabaseDemos.child("Mediciones").setValue(false);
-                        Toast.makeText(getActivity(), "Prueba finalizada, regresando a modo automático", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getActivity(), "Prueba finalizada, regresando a modo automático", Toast.LENGTH_SHORT).show();
+                        new SweetAlertDialog(getActivity())
+                                .setTitleText("Prueba finalizada, regresando a modo automático")
+                                .show();
                         bottomSheetDialog.dismiss();
                     }
                 });

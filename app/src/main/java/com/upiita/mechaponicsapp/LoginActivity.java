@@ -19,6 +19,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.regex.Pattern;
+import cn.pedant.SweetAlert.SweetAlertDialog;
+import android.graphics.Color;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -102,8 +104,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Inicio de sesión correcto
                             // Notificacion al usuario de proceso exitoso
-                            Toast.makeText(getApplicationContext(), "Inicio de sesion exitoso.",
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Inicio de sesion exitoso.", Toast.LENGTH_SHORT).show();
                             // Informacion de usuario
                             FirebaseUser user = mAuth.getCurrentUser();
                             // Cambio de ventana
@@ -113,8 +114,7 @@ public class LoginActivity extends AppCompatActivity {
                         } else {
                             // Inicio de sesión incorrecto
                             // Notificación al usuario de proceso fallido
-                            Toast.makeText(getApplicationContext(), "Autenticación fallida, reintente",
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Autenticación fallida, reintente", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

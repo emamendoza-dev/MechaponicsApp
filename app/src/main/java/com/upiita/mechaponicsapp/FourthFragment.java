@@ -26,6 +26,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import cn.pedant.SweetAlert.SweetAlertDialog;
+import android.graphics.Color;
 
 
 public class FourthFragment extends Fragment {
@@ -101,7 +103,6 @@ public class FourthFragment extends Fragment {
             public void onClick(View view) {
                 BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
                         getActivity(), R.style.BottomSheetDialogTheme);
-                //bottomSheetDialog.setContentView(R.layout.layout_bottom_sheet);
                 View bottomSheetView = LayoutInflater.from(getActivity().getApplicationContext())
                         .inflate(
                                 R.layout.layout_bottom_sheet, layoutSheet);
@@ -113,9 +114,11 @@ public class FourthFragment extends Fragment {
                         DatabaseReference mDatabase = database.getReference(pathProyecto);
                         mDatabase.child("Nickname").setValue(nicknamec.getText().toString());
                         mDatabase.child("Correo").setValue(correoc.getText().toString());
-                        //nickname.setText(nicknamec.getText());
-                        //correo.setText(correoc.getText());
-                        Toast.makeText(getActivity(), "Cambios guardados", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getActivity(), "Cambios guardados", Toast.LENGTH_SHORT).show();
+                        new SweetAlertDialog(getActivity(), SweetAlertDialog.SUCCESS_TYPE)
+                                .setTitleText("Listo!")
+                                .setContentText("Cambios guardados")
+                                .show();
                         bottomSheetDialog.dismiss();
                     }
                 });
