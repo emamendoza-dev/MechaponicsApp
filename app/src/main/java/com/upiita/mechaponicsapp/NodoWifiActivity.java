@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Layout;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
@@ -27,12 +28,14 @@ public class NodoWifiActivity extends AppCompatActivity {
 
         wvConfignodo = (WebView) findViewById(R.id.wvConfignodo);
         wvConfignodo.setWebViewClient(new WebViewClient());
+        //final WebSettings ajustesVisorWeb = wvConfignodo.getSettings();
+        //ajustesVisorWeb.setJavaScriptEnabled(true);
 
         btnOkNodo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //wvConfignodo.loadUrl("http://192.168.4.1");
-                wvConfignodo.loadUrl("https://www.google.com.mx/");
+                wvConfignodo.loadUrl("192.168.4.1");
+                //wvConfignodo.loadUrl("https://www.google.com.mx/");
             }
         });
 
