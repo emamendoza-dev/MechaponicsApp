@@ -461,7 +461,7 @@ public class ThirdFragment extends Fragment {
                 boolModOp6 = chipModOp6.isChecked();
 
                 DatabaseReference mDatabaseDemos = database.getReference(pathEstadoDemos);
-                mDatabaseDemos.child("Modo").setValue("D");
+                mDatabaseDemos.child("Modo").setValue(1);
 
                 mDatabaseDemos.child("Dosificadores").setValue(boolModOp1);
                 mDatabaseDemos.child("Solucion").setValue(boolModOp2);
@@ -518,7 +518,7 @@ public class ThirdFragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         DatabaseReference mDatabaseDemos = database.getReference(pathEstadoDemos);
-                        mDatabaseDemos.child("Modo").setValue("A");
+                        mDatabaseDemos.child("Modo").setValue(0);
 
                         mDatabaseDemos.child("Dosificadores").setValue(false);
                         mDatabaseDemos.child("Solucion").setValue(false);
