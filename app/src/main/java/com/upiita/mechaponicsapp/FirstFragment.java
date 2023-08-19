@@ -133,7 +133,7 @@ public class FirstFragment extends Fragment {
                                         elements.add(0, new ListElement(R.drawable.ima_sn , "Solución nutritiva", "Valor de pH: "+valor1,
                                                 "Valor de conductividad: "+valor2+" mS/cm","Temperatura de la solución: "+valor3+" °C",
                                                 "Nivel de la solución: "+valor4+" %","Nivel del ácido: "+valor5+" %",
-                                                "Nivel de la base: "+valor6+" %","Nivel del agua: "+valor7+" %",
+                                                "Nivel de la base: "+valor6+" %","Nivel del agua: "+"-%",
                                                 "Nivel de los nutrientes: "+valor8+" %","Activo"));
                                     }else{
                                         // Mismo CardView del nodo
@@ -141,19 +141,19 @@ public class FirstFragment extends Fragment {
                                         elements.remove(valnodo-1);
                                         elements.add(valnodo-1, new ListElement(R.drawable.ima_lettuce ,"Celda de cultivo "+(valnodo-1),
                                                 "Temperatura de la celda: "+valor1+" °C", "Humedad relativa de la celda: "+valor2+" %","Luminosidad: "+valor3+" %",
-                                                "Riegos: "+valor4+" al día","", "","", "","Activo"));
+                                                "Riegos: "+valor4+" min","", "","", "","Activo"));
                                     }
                                 }else{
                                     if (valnodo == 1){
                                         elements.add(valnodo-1, new ListElement(R.drawable.ima_sn , "Solución nutritiva", "Valor de pH: "+valor1,
-                                                "Valor de conductividad: "+valor2+" mS/cm","Temperatura de la solución: "+valor3+" °C",
+                                                "Valor de conductividad: "+valor2+" uS/cm","Temperatura de la solución: "+valor3+" °C",
                                                 "Nivel de la solución: "+valor4+" %","Nivel del ácido: "+valor5+" %",
-                                                "Nivel de la base: "+valor6+" %","Nivel del agua: "+valor7+" %",
+                                                "Nivel de la base: "+valor6+" %","Nivel del agua: "+"-%",
                                                 "Nivel de los nutrientes: "+valor8+" %","Activo"));
                                     }else{
                                         elements.add(valnodo-1, new ListElement(R.drawable.ima_lettuce ,"Celda de cultivo "+(valnodo-1),
                                                 "Temperatura: "+valor1+" °C", "Humedad relativa: "+valor2+" %","Luminosidad: "+valor3+" %",
-                                                "Riegos: "+valor4+" al día","", "","", "","Activo"));
+                                                "Riegos: "+valor4+" min","", "","", "","Activo"));
                                     }
                                 }
                                 init();

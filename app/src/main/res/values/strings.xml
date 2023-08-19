@@ -167,9 +167,9 @@
     // Texto de variable 2 de la CC
     <string name="f3_texto_modExHum">Humedad de la celda de cultivo</string>
     // Texto de variable 3 de la CC
-    <string name="f3_texto_modExLum">Luminisidad de la celda de cultivo</string>
+    <string name="f3_texto_modExLum">Luminosidad de la celda de cultivo</string>
     // Texto de variable 3 de la CC
-    <string name="f3_texto_modExRiego">Número de riegos al día</string>
+    <string name="f3_texto_modExRiego">Frecuencia de riego</string>
     // Texto del sheet dialog de cambio de variables del modo de sistema
     <string name="f3_texto_chnageMod">Modo Experto</string>
     // Texto del slider SN variable 1
@@ -191,15 +191,15 @@
     // Texto de selección de opciones para prueba
     <string name="f3_texto_seleChips">Selecione la configuración de la prueba</string>
     // Texto de opción 1 de los chips
-    <string name="f3_texto_chip1">Dosificadores</string>
+    <string name="f3_texto_chip1">Mezcladores</string>
     // Texto de opción 2 de los chips
-    <string name="f3_texto_chip2">Solución nutritiva</string>
+    <string name="f3_texto_chip2">Solución Nutritiva</string>
     // Texto de opción 3 de los chips
     <string name="f3_texto_chip3">Irrigación</string>
     // Texto de opción 4 de los chips
-    <string name="f3_texto_chip4">Temperatura</string>
+    <string name="f3_texto_chip4">Ventilación</string>
     // Texto de opción 5 de los chips
-    <string name="f3_texto_chip5">Humedad</string>
+    <string name="f3_texto_chip5">Iluminación</string>
     // Texto de opción 6 de los chips
     <string name="f3_texto_chip6">Mediciones</string>
     // Texto botón de ejecutar prueba demostrativo

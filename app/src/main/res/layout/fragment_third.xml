@@ -318,9 +318,9 @@ tools:context=".ThirdFragment">
                                     android:id="@+id/sliderSNVar1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:valueFrom="5.5"
-                                    android:valueTo="6.5"
-                                    android:stepSize="0.1" />
+                                    android:valueFrom="5.0"
+                                    android:valueTo="7.5"
+                                    android:stepSize="0.25" />
 
                                 <!-- Texto de variable 2 de la SN -->
 
@@ -342,9 +342,9 @@ tools:context=".ThirdFragment">
                                     android:id="@+id/sliderSNVar2"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:valueFrom="0.8"
-                                    android:valueTo="1.2"
-                                    android:stepSize="0.1" />
+                                    android:valueFrom="1500"
+                                    android:valueTo="3000"
+                                    android:stepSize="100" />
 
                             </LinearLayout>
 
@@ -398,8 +398,8 @@ tools:context=".ThirdFragment">
                                 android:id="@+id/sliderCCVar1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:valueFrom="15.0"
-                                android:valueTo="18.0"
+                                android:valueFrom="16.0"
+                                android:valueTo="22.0"
                                 android:stepSize="0.5" />
 
                             <!-- Texto de variable 2 de la CC -->
@@ -422,8 +422,8 @@ tools:context=".ThirdFragment">
                                 android:id="@+id/sliderCCVar2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:valueFrom="60"
-                                android:valueTo="80"
+                                android:valueFrom="30"
+                                android:valueTo="70"
                                 android:stepSize="5" />
 
                             <!-- Texto de variable 3 de la CC -->
@@ -447,7 +447,7 @@ tools:context=".ThirdFragment">
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:valueFrom="30"
-                                android:valueTo="90"
+                                android:valueTo="100"
                                 android:stepSize="10" />
 
                             <!-- Texto de variable 4 de la CC -->
@@ -471,7 +471,7 @@ tools:context=".ThirdFragment">
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:valueFrom="1"
-                                android:valueTo="5"
+                                android:valueTo="15"
                                 android:stepSize="1" />
 
 

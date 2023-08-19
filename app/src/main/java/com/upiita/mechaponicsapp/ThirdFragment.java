@@ -1,6 +1,7 @@
 package com.upiita.mechaponicsapp;
 
 import android.animation.LayoutTransition;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -76,6 +77,7 @@ public class ThirdFragment extends Fragment {
     // Objeto de Firebase para obtener la referencia de obtención de datos de la base de datos
     FirebaseDatabase database = FirebaseDatabase.getInstance();
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -359,12 +361,12 @@ public class ThirdFragment extends Fragment {
 
                 if (modExperto.isChecked()){
                     DatabaseReference mDatabase = database.getReference(pathProyecto);
-                    mDatabase.child("pH").setValue(6.0f);
-                    mDatabase.child("CE").setValue(1.0f);
-                    mDatabase.child("Temp").setValue(17.0f);
-                    mDatabase.child("Hum").setValue(70);
-                    mDatabase.child("Lum").setValue(50);
-                    mDatabase.child("Rie").setValue(5);
+                    mDatabase.child("pH").setValue(5.75f);
+                    mDatabase.child("CE").setValue(2000);
+                    mDatabase.child("Temp").setValue(18.0f);
+                    mDatabase.child("Hum").setValue(40);
+                    mDatabase.child("Lum").setValue(100);
+                    mDatabase.child("Rie").setValue(3);
                 }
             }
         });
