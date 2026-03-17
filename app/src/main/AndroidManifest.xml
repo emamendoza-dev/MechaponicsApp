@@ -4,6 +4,7 @@
     package="com.upiita.mechaponicsapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -13,25 +14,36 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.MechaponicsApp"
         tools:targetApi="31">
         <activity
+            android:name=".NodoWifiActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
             android:name=".DatosActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".ForgotPassword"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".RegistroActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".InitActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

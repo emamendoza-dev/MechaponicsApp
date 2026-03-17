@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NodoWifiActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvConfigNodo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/f3_texto_congifnodo"
+            android:textColor="@color/second_color"
+            android:gravity="center"/>
+
+        <Button
+            android:id="@+id/btnOkNodo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvConfigNodo"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/f3_color_text_nodoon"
+            android:drawableEnd="@drawable/cn_ic_refresh"
+            android:drawableTint="#fff"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/f3_texto_cinfignodo_ok"
+            android:textColor="#fff"
+            android:textSize="12dp" />
+
+        <WebView
+            android:id="@+id/wvConfignodo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnOkNodo" />
+
+        <Button
+            android:id="@+id/btnListoNodo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/wvConfignodo"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/second_color"
+            android:drawableEnd="@drawable/cn_ic_check"
+            android:drawableTint="#fff"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/f3_texto_btn_nodoListo"
+            android:textColor="#fff"
+            android:textSize="12dp" />
+
+    </RelativeLayout>
+</RelativeLayout>

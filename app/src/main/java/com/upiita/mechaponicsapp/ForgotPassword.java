@@ -15,6 +15,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textview.MaterialTextView;
 import com.google.firebase.auth.FirebaseAuth;
+import cn.pedant.SweetAlert.SweetAlertDialog;
+import android.graphics.Color;
 
 public class ForgotPassword extends AppCompatActivity {
 
@@ -70,15 +72,13 @@ public class ForgotPassword extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
                             // Notificación al usuario de correo enviado
-                            Toast.makeText(getApplicationContext(), "Correo enviado.",
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Correo enviado.", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(ForgotPassword.this, LoginActivity.class);
                             startActivity(intent);
                             finish();
                         }else{
                             // Notificación de error al enviar correo
-                            Toast.makeText(getApplicationContext(), "Correo invalido.",
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Correo invalido.", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottomSheetContainerNodos"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bottom_sheet_background"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="@string/f3_texto_bs_confignodos"
+        android:textColor="@color/first_color"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/first_color" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvAddNodo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/f3_texto_agregarnodos"
+            android:textColor="@color/second_color"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"/>
+
+        <RadioGroup
+            android:id="@+id/rbNodos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbNodo1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/f3_texto_rbtnNodo1"
+                android:layout_marginRight="3dp"
+                android:textColor="@color/primary_color_app"
+                android:fontFamily="@font/poppins_regular"
+                android:buttonTint="@color/first_color" />
+
+            <RadioButton
+                android:id="@+id/rbNodo2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/f3_texto_rbtnNodo2"
+                android:layout_marginRight="3dp"
+                android:textColor="@color/primary_color_app"
+                android:fontFamily="@font/poppins_regular"
+                android:buttonTint="@color/first_color" />
+
+            <RadioButton
+                android:id="@+id/rbNodo3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/f3_texto_rbtnNodo3"
+                android:layout_marginRight="3dp"
+                android:textColor="@color/primary_color_app"
+                android:fontFamily="@font/poppins_regular"
+                android:buttonTint="@color/first_color" />
+
+            <RadioButton
+                android:id="@+id/rbNodo4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/f3_texto_rbtnNodo4"
+                android:textColor="@color/primary_color_app"
+                android:fontFamily="@font/poppins_regular"
+                android:buttonTint="@color/first_color" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnAddNodo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/second_color"
+            android:drawableEnd="@drawable/cn_ic_addnodo"
+            android:drawableTint="#fff"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/f3_texto_bs_btn1"
+            android:textColor="#fff"
+            android:textSize="12dp" />
+
+        <Button
+            android:id="@+id/btnConfigNodo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/f3_color_text_nodoon"
+            android:drawableEnd="@drawable/f1_ic_settings"
+            android:drawableTint="#fff"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/f3_texto_bs_btn2"
+            android:textColor="#fff"
+            android:textSize="12dp" />
+
+        <Button
+            android:id="@+id/btnDeleNodo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/f3_color_text_nodooff"
+            android:drawableEnd="@drawable/lo_ic_logout"
+            android:drawableTint="#fff"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/f3_texto_bs_btn3"
+            android:textColor="#fff"
+            android:textSize="12dp" />
+
+
+
+
+
+    </LinearLayout>
+</LinearLayout>

@@ -37,7 +37,7 @@
                 android:layout_gravity="center"
                 android:paddingLeft="14dp"
                 android:paddingRight="14dp"
-                app:srcCompat="@drawable/cv_ic_sn" />
+                app:srcCompat="@drawable/ima_sn" />
 
             <LinearLayout
                 android:id="@+id/linearL2"
@@ -59,7 +59,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
                     android:text="@string/cv_label_nodo"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/SC_color"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
@@ -71,7 +71,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
                     android:text="@string/cv_label_var1"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/third_color"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -83,7 +83,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
                     android:text="@string/cv_label_var2"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/third_color"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -95,7 +95,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
                     android:text="@string/cv_label_var3"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/third_color"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -107,7 +107,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
                     android:text="@string/cv_label_var4"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/third_color"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -119,7 +119,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
                     android:text="@string/cv_label_var5"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/third_color"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -131,7 +131,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
                     android:text="@string/cv_label_var6"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/third_color"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -143,7 +143,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
                     android:text="@string/cv_label_var7"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/third_color"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -155,7 +155,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
                     android:text="@string/cv_label_var8"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/third_color"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -173,6 +173,7 @@
                 android:layout_marginEnd="6dp"
                 android:layout_marginRight="6dp"
                 android:text="@string/cv_label_estado"
+                android:textColor="@color/first_color"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 

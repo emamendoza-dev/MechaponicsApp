@@ -4,9 +4,9 @@
     <color name="third_color">#76d275</color>
     <color name="second_color">#43a047</color>
     <color name="first_color">#00701a</color>
-    <color name="primary_color_app">#c79100</color>
+    <color name="primary_color_app">#f9a825</color>
     <color name="second_color_app">#ffc107</color>
-    <color name="third_color_app">#fff350</color>
+    <color name="third_color_app">#fff59d</color>
     // Colores de apoyo
     // Color de Splash Screen
     <color name="SC_color">#c79100</color>
@@ -22,4 +22,10 @@
     <color name="rv_color_texto">#c79100</color>
     // Color Boton logout
     <color name="f4_color_btn_lo">#ff6659</color>
+    // Color Nodo desconectado
+    <color name="f3_color_text_nodooff">#ff6659</color>
+    // Color Nodo conectado
+    <color name="f3_color_text_nodoon">#00838f</color>
+    // Color variables de cambio modo experto
+    <color name="f3_color_text_variables">#26a69a</color>
 </resources>

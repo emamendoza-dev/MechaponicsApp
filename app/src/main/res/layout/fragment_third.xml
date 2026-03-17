@@ -1,14 +1,697 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".ThirdFragment">
+
+<!-- CardViews de configuración del sistema -->
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ThirdFragment">
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- CardView de configuración de los nodos-->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvf3Nodos"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="third" />
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
 
+        <!-- Elementos de la CardView de Nodos -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                app:srcCompat="@drawable/ima_sistema"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/f3_texto_desImageNodos"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="6dp">
+
+                <!-- Imagen del CardView -->
+
+                <ImageView
+                    android:id="@+id/cv_NiconImageView"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"
+                    app:srcCompat="@drawable/ima_nodos" />
+
+                <!-- Componentes de la CardView -->
+
+                <LinearLayout
+                    android:id="@+id/linearNL2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_toEndOf="@+id/cv_NiconImageView"
+                    android:layout_toRightOf="@+id/cv_NiconImageView"
+                    android:orientation="vertical">
+
+                    <!-- Nombre de la CardView -->
+
+                    <TextView
+                        android:id="@+id/tvCardNodo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/f3_texto_nomCardNodos"
+                        android:textColor="@color/first_color"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <!-- Campo 1 del CardView -->
+
+                    <TextView
+                        android:id="@+id/tvCNodo1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/f3_texto_nomNodo1"
+                        android:textColor="@color/f3_color_text_nodooff"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <!-- Campo 2 del CardView -->
+
+                    <TextView
+                        android:id="@+id/tvCNodo2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/f3_texto_nomNodo2"
+                        android:textColor="@color/f3_color_text_nodooff"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <!-- Campo 3 del CardView -->
+
+                    <TextView
+                        android:id="@+id/tvCNodo3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/f3_texto_nomNodo3"
+                        android:textColor="@color/f3_color_text_nodooff"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <!-- Campo 4 del CardView -->
+
+                    <TextView
+                        android:id="@+id/tvCNodo4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/f3_texto_nomNodo4"
+                        android:textColor="@color/f3_color_text_nodooff"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!-- Boton de editar información del CardView -->
+
+                <Button
+                    android:id="@+id/btnAgregarNodo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginRight="6dp"
+                    android:drawableTint="#fff"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/f3_texto_btn_agregar"
+                    android:textSize="12dp" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- CardView de configuración del modo de operación -->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvf3Modos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
+
+        <!-- Elementos de la CardView de Modos -->
+
+        <LinearLayout
+            android:id="@+id/layoutConfigMod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="6dp">
+
+                <!-- Imagen del CardView -->
+
+                <ImageView
+                    android:id="@+id/cv_CiconImageView"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"
+                    app:srcCompat="@drawable/ima_modos" />
+
+                <!-- Componentes de la CardView -->
+
+                <LinearLayout
+                    android:id="@+id/linearCL2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_toEndOf="@+id/cv_CiconImageView"
+                    android:layout_toRightOf="@+id/cv_CiconImageView"
+                    android:orientation="vertical">
+
+                    <!-- Nombre de la CardView -->
+
+                    <TextView
+                        android:id="@+id/tvCardModos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="@string/f3_texto_nomCardModos"
+                        android:textColor="@color/first_color"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <!-- Switch de cambio de modo -->
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/swChangeMod"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/f3_texto_changemodo"
+                        android:textColor="@color/second_color"
+                        app:useMaterialThemeColors="false"
+                        app:thumbTint="@color/primary_color_app"
+                        app:trackTint="@color/third_color_app"/>
+
+                </LinearLayout>
+
+                <!-- Componentes de la CardView -->
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linearCL2"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginBottom="50dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearConfigMod"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/cv_CiconImageView"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_below="@+id/linearCL2"
+                        android:animateLayoutChanges="true"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <View
+                            android:layout_width="wrap_content"
+                            android:layout_height="1dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="@color/second_color" />
+
+                        <!-- Texto de variables de la SN -->
+
+                        <LinearLayout
+                            android:id="@+id/layouttvMSN"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:animateLayoutChanges="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvMSN"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="15dp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:text="@string/f3_texto_modSN"
+                                android:textColor="@color/f3_color_text_nodoon"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:id="@+id/linearConfigSN"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:animateLayoutChanges="true"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <!-- Texto de variable 1 de la SN -->
+
+                                <TextView
+                                    android:id="@+id/tvMSNVar1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginBottom="3dp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:text="@string/f3_texto_modExpH"
+                                    android:textColor="@color/f3_color_text_variables"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <!-- Slider de la variable 1 de la SN -->
+
+                                <com.google.android.material.slider.Slider
+                                    android:id="@+id/sliderSNVar1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:valueFrom="5.0"
+                                    android:valueTo="7.5"
+                                    android:stepSize="0.25" />
+
+                                <!-- Texto de variable 2 de la SN -->
+
+                                <TextView
+                                    android:id="@+id/tvMSNVar2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginBottom="3dp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:text="@string/f3_texto_modExCE"
+                                    android:textColor="@color/f3_color_text_variables"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <!-- Slider de la variable 2 de la SN -->
+
+                                <com.google.android.material.slider.Slider
+                                    android:id="@+id/sliderSNVar2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:valueFrom="1500"
+                                    android:valueTo="3000"
+                                    android:stepSize="100" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layouttvMCC"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="vertical">
+
+                        <!-- Texto de variables de la CC -->
+
+                        <TextView
+                            android:id="@+id/tvMCC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="15dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/f3_texto_modCC"
+                            android:textColor="@color/f3_color_text_nodoon"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/linearConfigCC"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:animateLayoutChanges="true"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <!-- Texto de variable 1 de la CC -->
+
+                            <TextView
+                                android:id="@+id/tvMCCVar1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginBottom="3dp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:text="@string/f3_texto_modExTemp"
+                                android:textColor="@color/f3_color_text_variables"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <!-- Slider de la variable 1 de la CC -->
+
+                            <com.google.android.material.slider.Slider
+                                android:id="@+id/sliderCCVar1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:valueFrom="16.0"
+                                android:valueTo="22.0"
+                                android:stepSize="0.5" />
+
+                            <!-- Texto de variable 2 de la CC -->
+
+                            <TextView
+                                android:id="@+id/tvMCCVar2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginBottom="3dp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:text="@string/f3_texto_modExHum"
+                                android:textColor="@color/f3_color_text_variables"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <!-- Slider de la variable 2 de la CC -->
+
+                            <com.google.android.material.slider.Slider
+                                android:id="@+id/sliderCCVar2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:valueFrom="30"
+                                android:valueTo="70"
+                                android:stepSize="5" />
+
+                            <!-- Texto de variable 3 de la CC -->
+
+                            <TextView
+                                android:id="@+id/tvMCCVar3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginBottom="3dp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:text="@string/f3_texto_modExLum"
+                                android:textColor="@color/f3_color_text_variables"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <!-- Slider de la variable 3 de la CC -->
+
+                            <com.google.android.material.slider.Slider
+                                android:id="@+id/sliderCCVar3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:valueFrom="30"
+                                android:valueTo="100"
+                                android:stepSize="10" />
+
+                            <!-- Texto de variable 4 de la CC -->
+
+                            <TextView
+                                android:id="@+id/tvMCCVar4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginBottom="3dp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:text="@string/f3_texto_modExRiego"
+                                android:textColor="@color/f3_color_text_variables"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <!-- Slider de la variable 4 de la CC -->
+
+                            <com.google.android.material.slider.Slider
+                                android:id="@+id/sliderCCVar4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:valueFrom="1"
+                                android:valueTo="15"
+                                android:stepSize="1" />
+
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                        <!-- Boton de editar configuración del modo del CardView -->
+
+                        <Button
+                            android:id="@+id/btnEditModo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="6dp"
+                            android:layout_marginRight="6dp"
+                            android:drawableEnd="@drawable/f3_ic_change"
+                            android:drawableTint="#fff"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/f3_texto_btn_modificar"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+                </ScrollView>
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- CardView de configuración del modo demostrativo del sistema -->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvf3Demostrativo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
+
+        <!-- Elementos de la CardView de Modos -->
+
+        <LinearLayout
+            android:id="@+id/layoutConfigDemos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="6dp">
+
+                <!-- Imagen del CardView -->
+
+                <ImageView
+                    android:id="@+id/cv_DiconImageView"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"
+                    app:srcCompat="@drawable/ima_test" />
+
+                <!-- Componentes de la CardView -->
+
+                <LinearLayout
+                    android:id="@+id/linearDL2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_toEndOf="@+id/cv_DiconImageView"
+                    android:layout_toRightOf="@+id/cv_DiconImageView"
+                    android:orientation="vertical">
+
+                    <!-- Nombre de la CardView -->
+
+                    <TextView
+                        android:id="@+id/tvCardDemos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="@string/f3_texto_nomCardDemos"
+                        android:textColor="@color/first_color"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <!-- Switch de cambio de modo -->
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/swChangeDemos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/f3_texto_sliderDemos"
+                        android:textColor="@color/second_color"
+                        app:useMaterialThemeColors="false"
+                        app:thumbTint="@color/primary_color_app"
+                        app:trackTint="@color/third_color_app"/>
+
+                </LinearLayout>
+
+                <!-- Componentes de la CardView -->
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linearDL2"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginBottom="55dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearConfigDemos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="2dp"
+                        android:animateLayoutChanges="true"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <View
+                            android:layout_width="wrap_content"
+                            android:layout_height="1dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="@color/second_color" />
+
+                        <!-- Texto de variables de la SN -->
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/f3_texto_seleChips"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="@color/f3_color_text_variables" />
+
+                        <!-- Opciones de la prueba -->
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/chipGroupDemos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/f3_texto_chip1"
+                                style="@style/Widget.MaterialComponents.Chip.Choice" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/f3_texto_chip2"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"/>
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/f3_texto_chip3"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"/>
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/f3_texto_chip4"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"/>
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/f3_texto_chip5"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"/>
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/f3_texto_chip6"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"/>
+
+                        </com.google.android.material.chip.ChipGroup>
+
+
+
+                        <!-- Boton de editar configuración del modo del CardView -->
+
+                        <Button
+                            android:id="@+id/btnRunDemos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="6dp"
+                            android:layout_marginRight="6dp"
+                            android:drawableEnd="@drawable/f3_ic_change"
+                            android:drawableTint="#fff"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/f3_texto_btn_demos"
+                            android:textSize="12dp" />
+
+                    </LinearLayout>
+                </ScrollView>
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
 </FrameLayout>

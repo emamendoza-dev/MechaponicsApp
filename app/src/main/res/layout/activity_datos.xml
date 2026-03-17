@@ -6,204 +6,280 @@
     android:layout_height="match_parent"
     tools:context=".DatosActivity">
 
-    <TextView
-        android:id="@+id/tvDNodo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Nodo"
-        android:textColor="@color/primary_color_app"
-        android:textSize="50sp"
-        android:textStyle="bold"/>
-
     <LinearLayout
-        android:id="@+id/linear1"
+        android:id="@+id/linearLDatosTit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvDNodo"
-        android:orientation="horizontal">
+        android:gravity="center"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tvDVar1"
-            android:layout_width="250dp"
+            android:id="@+id/tvDNodo"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Variable1"
-            android:textColor="@color/second_color_app"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:text="Nodo"
+            android:textColor="@color/primary_color_app"
+            android:textSize="40sp"
+            android:textStyle="bold"/>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linear2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/linear1"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/tvDVar2"
-            android:layout_width="250dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Variable2"
-            android:textColor="@color/second_color_app"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/dn_ima_var1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                app:srcCompat="@drawable/ima_ph" />
 
-    <LinearLayout
-        android:id="@+id/linear3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/linear2"
-        android:orientation="horizontal">
+            <com.ekn.gruzer.gaugelibrary.ArcGauge
+                android:id="@+id/medidor1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginRight="10dp"/>
 
-        <TextView
-            android:id="@+id/tvDVar3"
-            android:layout_width="250dp"
+            <TextView
+                android:id="@+id/tvDVar1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Variable1"
+                android:textColor="@color/second_color"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Variable3"
-            android:textColor="@color/second_color_app"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/dn_ima_var2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                app:srcCompat="@drawable/ima_ce" />
 
-    <LinearLayout
-        android:id="@+id/linear4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/linear3"
-        android:orientation="horizontal">
+            <com.ekn.gruzer.gaugelibrary.ArcGauge
+                android:id="@+id/medidor2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginRight="10dp"/>
 
-        <TextView
-            android:id="@+id/tvDVar4"
-            android:layout_width="250dp"
+            <TextView
+                android:id="@+id/tvDVar2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Variable2"
+                android:textColor="@color/second_color"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Variable4"
-            android:textColor="@color/second_color_app"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/dn_ima_var3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                app:srcCompat="@drawable/ima_tempsn" />
 
-    <LinearLayout
-        android:id="@+id/linear5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/linear4"
-        android:orientation="horizontal">
+            <com.ekn.gruzer.gaugelibrary.ArcGauge
+                android:id="@+id/medidor3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginRight="10dp"/>
 
-        <TextView
-            android:id="@+id/tvDVar5"
-            android:layout_width="250dp"
+            <TextView
+                android:id="@+id/tvDVar3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Variable3"
+                android:textColor="@color/second_color"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Variable5"
-            android:textColor="@color/second_color_app"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/dn_ima_var4"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                app:srcCompat="@drawable/ima_nivtanque" />
 
-    <LinearLayout
-        android:id="@+id/linear6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/linear5"
-        android:orientation="horizontal">
+            <com.ekn.gruzer.gaugelibrary.ArcGauge
+                android:id="@+id/medidor4"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginRight="10dp"/>
 
-        <TextView
-            android:id="@+id/tvDVar6"
-            android:layout_width="250dp"
+            <TextView
+                android:id="@+id/tvDVar4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Variable4"
+                android:textColor="@color/second_color"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Variable6"
-            android:textColor="@color/second_color_app"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/dn_ima_var5"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                app:srcCompat="@drawable/ima_acido" />
 
-    <LinearLayout
-        android:id="@+id/linear7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/linear6"
-        android:orientation="horizontal">
+            <com.ekn.gruzer.gaugelibrary.ArcGauge
+                android:id="@+id/medidor5"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginRight="10dp"/>
 
-        <TextView
-            android:id="@+id/tvDVar7"
-            android:layout_width="250dp"
+            <TextView
+                android:id="@+id/tvDVar5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Variable5"
+                android:textColor="@color/second_color"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Variable7"
-            android:textColor="@color/second_color_app"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/dn_ima_var6"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                app:srcCompat="@drawable/ima_base" />
 
-    <LinearLayout
-        android:id="@+id/linear8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/linear7"
-        android:orientation="horizontal">
+            <com.ekn.gruzer.gaugelibrary.ArcGauge
+                android:id="@+id/medidor6"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginRight="10dp"/>
 
-        <TextView
-            android:id="@+id/tvDVar8"
-            android:layout_width="250dp"
+            <TextView
+                android:id="@+id/tvDVar6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Variable6"
+                android:textColor="@color/second_color"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Variable8"
-            android:textColor="@color/second_color_app"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/dn_ima_var7"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                app:srcCompat="@drawable/ima_agua" />
 
-    <LinearLayout
-        android:id="@+id/linear9"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/linear8"
-        android:orientation="horizontal">
+            <com.ekn.gruzer.gaugelibrary.ArcGauge
+                android:id="@+id/medidor7"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginRight="10dp"/>
+
+            <TextView
+                android:id="@+id/tvDVar7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Variable7"
+                android:textColor="@color/second_color"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/dn_ima_var8"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                app:srcCompat="@drawable/ima_nutrientes" />
+
+            <com.ekn.gruzer.gaugelibrary.ArcGauge
+                android:id="@+id/medidor8"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginRight="10dp"/>
+
+            <TextView
+                android:id="@+id/tvDVar8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Variable8"
+                android:textColor="@color/second_color"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
 
         <TextView
             android:id="@+id/tvDEstado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
             android:text="Estado"
             android:textColor="@color/second_color_app"
             android:textSize="20sp"
             android:textStyle="bold" />
-    </LinearLayout>
 
+    </LinearLayout>
 </RelativeLayout>

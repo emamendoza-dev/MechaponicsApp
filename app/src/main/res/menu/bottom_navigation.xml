@@ -9,17 +9,17 @@
         android:title="@string/bn_firstFragment" />
 
     <!-- Opción dos para gestión del sistema -->
-
+    <!--
     <item
         android:id="@+id/secondFragment"
-        android:icon="@drawable/f1_ic_changeval"
-        android:title="@string/bn_secondFragment" />
+        android:icon="@drawable/f1_ic_settings"
+        android:title="@string/bn_secondFragment" /> -->
 
     <!-- Opción tres para configuración del sistema -->
 
     <item
         android:id="@+id/thirdFragment"
-        android:icon="@drawable/f1_ic_settings"
+        android:icon="@drawable/f1_ic_changeval"
         android:title="@string/bn_thirdFragment" />
 
     <!-- Opción cuatro para ayuda del sistema -->

@@ -36,10 +36,10 @@ public class InitActivity extends AppCompatActivity {
                         // Fragmento del sistema
                         getSupportFragmentManager().beginTransaction().replace(R.id.fContainer, firstFragment).commit();
                         return true;
-                    case R.id.secondFragment:
+                    //case R.id.secondFragment:
                         // Fragmento de gestión del sistema
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fContainer, secondFragment).commit();
-                        return true;
+                        //getSupportFragmentManager().beginTransaction().replace(R.id.fContainer, secondFragment).commit();
+                        //return true;
                     case R.id.thirdFragment:
                         // Fragmento de configuración del sistema
                         getSupportFragmentManager().beginTransaction().replace(R.id.fContainer, thirdFragment).commit();

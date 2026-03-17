@@ -50,7 +50,7 @@
     // Nombre primer fragmento
     <string name="bn_firstFragment">Home</string>
     // Nombre segundo fragmento
-    <string name="bn_secondFragment">Modos</string>
+    <string name="bn_secondFragment">Estadísticas</string>
     // Nombre tercero fragmento
     <string name="bn_thirdFragment">Configuración</string>
     // Nombre cuarto fragmento
@@ -132,4 +132,113 @@
     <string name="f4_texto_sf4_usuario">Nombre de usuario:</string>}
     // Correo de usuario Bottom Sheet
     <string name="f4_texto_sf4_email">Correo:</string>
+
+    // Thrid fragment screen
+    // Texto de descipción de imagen del usuario
+    <string name="f3_texto_desImageNodos">Imagen del sistema</string>
+    // Texto de CardView de información de usuario
+    <string name="f3_texto_nomCardNodos">Nodos del sistema</string>
+    // Texto de Nodo 1
+    <string name="f3_texto_nomNodo1">Sin nodo de solución</string>
+    // Texto de Nodo 2
+    <string name="f3_texto_nomNodo2">Sin nodo de cultivo 1</string>
+    // Texto de Nodo 3
+    <string name="f3_texto_nomNodo3">Sin nodo de cultivo 2</string>
+    // Texto de Nodo 4
+    <string name="f3_texto_nomNodo4">Sin nodo de cultivo 3</string>
+    // Texto boton agregar nodo
+    <string name="f3_texto_btn_agregar">Configurar</string>
+    // Texto de CardView de modos de operación sistema
+    <string name="f3_texto_nomCardModos">Configuración del sistema</string>
+    // Texto del switch de cambio de mod
+    <string name="f3_texto_changemodo">Modo de operación automático</string>
+    // Texto de valor de la SN
+    <string name="f3_texto_modSN">Solución nutritiva</string>
+    // Texto del botón de modificación de los parámetros del modo experto
+    <string name="f3_texto_btn_modificar">Modificar</string>
+    // Texto de variable 1 de la SN
+    <string name="f3_texto_modExpH">pH de la solución nutritiva </string>
+    // Texto de variable 2 de la SN
+    <string name="f3_texto_modExCE">CE de la solución nutritiva </string>
+    // Texto de valor de la SN
+    <string name="f3_texto_modCC">Celda de cultivo</string>
+    // Texto de variable 1 de la CC
+    <string name="f3_texto_modExTemp">Temperatura de la celda de cultivo</string>
+    // Texto de variable 2 de la CC
+    <string name="f3_texto_modExHum">Humedad de la celda de cultivo</string>
+    // Texto de variable 3 de la CC
+    <string name="f3_texto_modExLum">Luminosidad de la celda de cultivo</string>
+    // Texto de variable 3 de la CC
+    <string name="f3_texto_modExRiego">Frecuencia de riego</string>
+    // Texto del sheet dialog de cambio de variables del modo de sistema
+    <string name="f3_texto_chnageMod">Modo Experto</string>
+    // Texto del slider SN variable 1
+    <string name="f3_texto_sliderSNVar1">pH del sistema a:</string>
+    // Texto del slider SN variable 2
+    <string name="f3_texto_sliderSNVar2">CE del sistema a:</string>
+    // Texto del slider CC variable 1
+    <string name="f3_texto_sliderCCVar1">Temperatura del sistema a:</string>
+    // Texto del slider CC variable 3
+    <string name="f3_texto_sliderCCVar2">Humedad del sistema a:</string>
+    // Texto del slider CC variable 3
+    <string name="f3_texto_sliderCCVar3">Luminosidad del sistema a:</string>
+    // Texto del slider CC variable 4
+    <string name="f3_texto_sliderCCVar4">Riegos del sistema a:</string>
+    // Texto de Cardview del modo demostrativo
+    <string name="f3_texto_nomCardDemos">Prueba del sistema</string>
+    // Texto para habilitar opciones de la prueba
+    <string name="f3_texto_sliderDemos">Habilitar opciones de la prueba</string>
+    // Texto de selección de opciones para prueba
+    <string name="f3_texto_seleChips">Selecione la configuración de la prueba</string>
+    // Texto de opción 1 de los chips
+    <string name="f3_texto_chip1">Mezcladores</string>
+    // Texto de opción 2 de los chips
+    <string name="f3_texto_chip2">Solución Nutritiva</string>
+    // Texto de opción 3 de los chips
+    <string name="f3_texto_chip3">Irrigación</string>
+    // Texto de opción 4 de los chips
+    <string name="f3_texto_chip4">Ventilación</string>
+    // Texto de opción 5 de los chips
+    <string name="f3_texto_chip5">Iluminación</string>
+    // Texto de opción 6 de los chips
+    <string name="f3_texto_chip6">Mediciones</string>
+    // Texto botón de ejecutar prueba demostrativo
+    <string name="f3_texto_btn_demos">Ejecutar prueba</string>
+
+    // Texto bottom sheet de modo demostrativo
+    // Texto del titulo del bottom sheet
+    <string name="f3_texto_bsDemos">Modo demostrativo</string>
+    // Texto del boton del modo demostrativo bottom sheet
+    <string name="f3_texto_btnDemos">Cancelar</string>
+
+    // Bottom sheet de la configuración de los nodos
+    // Texto
+    <string name="f3_texto_bs_confignodos"> Nodos del sistema </string>
+    // Texto del boton de agregar nodo
+    <string name="f3_texto_bs_btn1">Agregar nodo</string>
+    // Texto del boton de configurar nodo
+    <string name="f3_texto_bs_btn2">Configurar nodo</string>
+    // Texto del boton de elminar nodo
+    <string name="f3_texto_bs_btn3">Eliminar nodo</string>
+    // Texto del nodo 4
+    <string name="om_nodo4">Nodo 4</string>
+
+    // Pagina de configuracion del nodo wifi
+    // Texto de conexión con el ESP32
+    <string name="f3_texto_congifnodo">Conectese al ESP32 que va configurar</string>
+    // Texto de boton de nodo conectado listo
+    <string name="f3_texto_cinfignodo_ok">Activar</string>
+    // Texto de boton de nodo configurado
+    <string name="f3_texto_btn_nodoListo">Regresar</string>
+    // Texto para agregar nodos
+    <string name="f3_texto_agregarnodos">Selecciona el nodo que vas a configurar</string>
+    // Texto de selección nodo 1
+    <string name="f3_texto_rbtnNodo1">Nodo 1</string>
+    // Texto de selección nodo 2
+    <string name="f3_texto_rbtnNodo2">Nodo 2</string>
+    // Texto de selección nodo 3
+    <string name="f3_texto_rbtnNodo3">Nodo 3</string>
+    // Texto de selección nodo 4
+    <string name="f3_texto_rbtnNodo4">Nodo 4</string>
+
 </resources>

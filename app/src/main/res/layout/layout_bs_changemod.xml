@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottomSheetContainerMod"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bottom_sheet_background"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="@string/f3_texto_chnageMod"
+        android:textColor="@color/first_color"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/first_color" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/tvSliderSNVar1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/SC_color"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/f3_texto_sliderSNVar1"/>
+
+        <TextView
+            android:id="@+id/tvSliderSNVar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/SC_color"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/f3_texto_sliderSNVar2"/>
+
+        <TextView
+            android:id="@+id/tvSliderCCVar1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/SC_color"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/f3_texto_sliderCCVar1"/>
+
+        <TextView
+            android:id="@+id/tvSliderCCVar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/SC_color"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/f3_texto_sliderCCVar2"/>
+
+        <TextView
+            android:id="@+id/tvSliderCCVar3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/SC_color"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/f3_texto_sliderCCVar3"/>
+
+        <TextView
+            android:id="@+id/tvSliderCCVar4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/SC_color"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/f3_texto_sliderCCVar4"/>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/first_color" />
+
+    <Button
+        android:id="@+id/btnCambioVarMod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginBottom="10dp"
+        android:drawableEnd="@drawable/bse_ic_edit"
+        android:textColor="#fff"
+        android:drawableTint="#fff"
+        android:backgroundTint="@color/second_color"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/f4_texto_btn_editarUs"
+        android:textSize="12dp" />
+
+</LinearLayout>
